@@ -1,7 +1,6 @@
 package com.example.oopprojectwork;
 
 import android.os.Bundle;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -29,3 +28,4 @@ public class MainActivity extends AppCompatActivity {
 // king push 5
 // ahmad push <3
 // inshalllah
+// Allah hu akbar
