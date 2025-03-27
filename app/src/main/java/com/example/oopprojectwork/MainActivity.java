@@ -30,3 +30,4 @@ public class MainActivity extends AppCompatActivity {
 // ahmad push <3
 // inshalllah
 // ahmad push with love <3
+// allah hu akbar
