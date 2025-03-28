@@ -173,13 +173,5 @@
             android:textAllCaps="false"
             android:textColor="@android:color/black" />
 
-        <!-- Home Screen text -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Home Screen"
-            android:textSize="12sp" />
-
     </LinearLayout>
 </ScrollView>
