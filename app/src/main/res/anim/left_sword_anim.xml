@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fillAfter="false">
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    android:fillAfter="true">
 
+    <!-- Longer slide from the left (slower) -->
     <translate
-        android:fromXDelta="-100%"
-        android:toXDelta="0%"
-        android:duration="300" />
+        android:fromXDelta="-180"
+        android:toXDelta="0"
+        android:duration="500" /> <!-- Increased duration -->
 
+    <!-- Sharper inward rotation -->
     <rotate
         android:fromDegrees="0"
-        android:toDegrees="45"
+        android:toDegrees="12"
         android:pivotX="50%"
         android:pivotY="100%"
-        android:duration="150" />
+        android:startOffset="100"
+        android:duration="300" /> <!-- Increased duration -->
+
+    <!-- Impact bounce -->
+    <scale
+        android:fromXScale="1.0"
+        android:toXScale="1.05"
+        android:fromYScale="1.0"
+        android:toYScale="1.05"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:startOffset="300"
+        android:duration="200" />
 </set>
