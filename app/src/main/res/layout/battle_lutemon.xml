@@ -116,10 +116,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- VS Text -->
+
+        <!-- Second Card -->
         <TextView
             android:id="@+id/textVS"
             android:layout_width="wrap_content"
@@ -131,9 +134,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/secondCard"
             app:layout_constraintStart_toEndOf="@id/firstCard"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
 
-        <!-- Second Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/secondCard"
             android:layout_width="0dp"
@@ -206,6 +209,7 @@
                     app:layout_constraintTop_toBottomOf="@id/secondImageView" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -254,16 +258,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="225dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="20dp"
-        android:text="ANIMATION WILL GO HERE!"
-        android:textSize="20sp"
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="76dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:srcCompat="@drawable/sword_right" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="74dp"
+        android:layout_height="80dp"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="352dp"
+        tools:srcCompat="@drawable/sword_left" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
