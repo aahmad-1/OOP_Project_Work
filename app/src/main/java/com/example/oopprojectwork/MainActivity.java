@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (findViewById(R.id.button) != null) {
             // We're on battle_lutemon screen
             setupBattleLutemonNavigation();
+        } else if (findViewById(R.id.btnCancel) != null) {
+            setupCreateLutemonNavigation();
         }
         // Add more conditions if you have other screens
     }
@@ -107,6 +109,17 @@ public class MainActivity extends AppCompatActivity {
         btnNextAttack.setOnClickListener(v -> {
             // Add battle functionality here
             AnimationManager.playSwordClashAnimation(MainActivity.this, leftSword, rightSword);
+        });
+    }
+    private void setupCreateLutemonNavigation() {
+        // Button from create_new_lutemon to go back to lutemon_battle
+        Button btnCancel = findViewById(R.id.btnCancel);
+        btnCancel.setOnClickListener(v -> setContentView(R.layout.lutemon_battle));
+
+        // Create button (add your create logic here)
+        Button btnCreate = findViewById(R.id.btnCreate);
+        btnCreate.setOnClickListener(v -> {
+            // Add create functionality here
         });
     }
 }
