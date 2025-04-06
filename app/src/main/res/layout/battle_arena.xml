@@ -40,23 +40,23 @@
         android:layout_marginBottom="10dp"
         android:background="@color/white"
         android:text="Battle logs"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnNextAttack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnNextAttack"
         android:layout_width="309dp"
         android:layout_height="51dp"
         android:layout_marginBottom="95dp"
         android:text="Next Attack"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/btnLutemonHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnLutemonHome"
         android:layout_width="158dp"
         android:layout_height="46dp"
         android:layout_marginBottom="24dp"
