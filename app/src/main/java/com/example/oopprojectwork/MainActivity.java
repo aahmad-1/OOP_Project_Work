@@ -1,8 +1,8 @@
 package com.example.oopprojectwork;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,17 +12,21 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageView leftSword, rightSword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.lutemon_battle);
+        setContentView(R.layout.lutemon_menu);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         setupCurrentScreenNavigation();
+
     }
 
     @Override
@@ -36,15 +40,20 @@ public class MainActivity extends AppCompatActivity {
         if (findViewById(R.id.btnViewHome) != null) {
             // We're on lutemon_battle screen
             setupBattleScreenNavigation();
-        } else if (findViewById(R.id.training_btn) != null) {
+        } else if (findViewById(R.id.btnMoveToTraining) != null) {
             // We're on lutemon_home screen
             setupHomeScreenNavigation();
-        } else if (findViewById(R.id.button8) != null) {
+        } else if (findViewById(R.id.btnGoToHome) != null) {
             // We're on training_area_lutemon screen
             setupTrainingScreenNavigation();
-        } else if (findViewById(R.id.button) != null) {
+        } else if (findViewById(R.id.btnNextAttack) != null) {
             // We're on battle_lutemon screen
             setupBattleLutemonNavigation();
+        } else if (findViewById(R.id.btnCancel) != null) {
+            setupCreateLutemonNavigation();
+        } else if (findViewById(R.id.btnGoToMenu) != null) {
+            // We're on statistics screen
+            setupStatisticsScreenNavigation();
         }
         // Add more conditions if you have other screens
     }
@@ -54,13 +63,9 @@ public class MainActivity extends AppCompatActivity {
         Button btnViewHome = findViewById(R.id.btnViewHome);
         btnViewHome.setOnClickListener(v -> setContentView(R.layout.lutemon_home));
 
-        // Button from lutemon_battle to training_area_lutemon
-        Button btnViewTraining = findViewById(R.id.btnViewTrainingArea);
-        btnViewTraining.setOnClickListener(v -> setContentView(R.layout.training_area_lutemon));
-
-        // Button from lutemon_battle to battle_lutemon
-        Button btnViewBattleArena = findViewById(R.id.btnViewBattleArena);
-        btnViewBattleArena.setOnClickListener(v -> setContentView(R.layout.battle_lutemon));
+        // Button from lutemon_battle to statistics
+        Button btnViewTraining = findViewById(R.id.btnViewStatistics);
+        btnViewTraining.setOnClickListener(v -> setContentView(R.layout.statistics));
 
         // Button from lutemon_battle to create_new_lutemon
         Button btnCreateNew = findViewById(R.id.btnCreateNewLutemon);
@@ -69,39 +74,70 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupHomeScreenNavigation() {
         // Button from lutemon_home to training_area_lutemon
-        Button btnMoveToTraining = findViewById(R.id.training_btn);
+        Button btnMoveToTraining = findViewById(R.id.btnMoveToTraining);
         btnMoveToTraining.setOnClickListener(v -> setContentView(R.layout.training_area_lutemon));
 
         Button btnMoveToMenu = findViewById(R.id.btnMoveToMenu);
         btnMoveToMenu.setOnClickListener(v -> setContentView(R.layout.lutemon_menu));
 
         // Button from lutemon_home to battle_lutemon
-        Button btnMoveToBattle = findViewById(R.id.battle_btn);
-        btnMoveToBattle.setOnClickListener(v -> setContentView(R.layout.battle_lutemon));
+        Button btnMoveToBattle = findViewById(R.id.btnMoveToBattle);
+        btnMoveToBattle.setOnClickListener(v -> {
+            setContentView(R.layout.battle_arena);
+            // Initialize sword ImageViews immediately after setting the battle arena content
+            leftSword = findViewById(R.id.imageView4);
+            rightSword = findViewById(R.id.imageView5);
+            setupBattleLutemonNavigation();
+        });
     }
 
     private void setupTrainingScreenNavigation() {
         // Button from training_area_lutemon to go to home
-        Button btnGoHome = findViewById(R.id.button9);
-        btnGoHome.setOnClickListener(v -> setContentView(R.layout.lutemon_battle));
+        Button btnGoHome = findViewById(R.id.btnGoToHome);
+        btnGoHome.setOnClickListener(v -> setContentView(R.layout.lutemon_home));
 
         // Train button (add your training logic here)
-        Button btnTrain = findViewById(R.id.button8);
+        Button btnTrain = findViewById(R.id.btnTrain);
         btnTrain.setOnClickListener(v -> {
             // Add training functionality here
         });
     }
 
     private void setupBattleLutemonNavigation() {
+        // Initialize sword ImageViews if they're null
+        if (leftSword == null) {
+            leftSword = findViewById(R.id.imageView4);
+        }
+        if (rightSword == null) {
+            rightSword = findViewById(R.id.imageView5);
+        }
+
         // Button from battle_lutemon to go to home
-        Button btnGoHome = findViewById(R.id.button3);
-        btnGoHome.setOnClickListener(v -> setContentView(R.layout.lutemon_battle));
+        Button btnGoHome = findViewById(R.id.btnLutemonHome);
+        btnGoHome.setOnClickListener(v -> setContentView(R.layout.lutemon_home));
 
-        // Next Attack button (add your battle logic here)
-        Button btnNextAttack = findViewById(R.id.button);
+        // Next Attack button
+        Button btnNextAttack = findViewById(R.id.btnNextAttack);
         btnNextAttack.setOnClickListener(v -> {
-            // Add battle functionality here
+            if (leftSword != null && rightSword != null) {
+                AnimationManager.playSwordClashAnimation(MainActivity.this, leftSword, rightSword);
+            }
         });
+    }
+    private void setupCreateLutemonNavigation() {
+        // Button from create_new_lutemon to go back to lutemon_battle
+        Button btnCancel = findViewById(R.id.btnCancel);
+        btnCancel.setOnClickListener(v -> setContentView(R.layout.lutemon_menu));
 
+        // Create button (add your create logic here)
+        Button btnCreate = findViewById(R.id.btnCreate);
+        btnCreate.setOnClickListener(v -> {
+            // Add create functionality here
+        });
+    }
+    private void setupStatisticsScreenNavigation() {
+        // Button from statistics to go back to menu
+        Button btnGoToMenu = findViewById(R.id.btnGoToMenu);
+        btnGoToMenu.setOnClickListener(v -> setContentView(R.layout.lutemon_menu));
     }
 }
