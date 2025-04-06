@@ -1,9 +1,8 @@
 package com.example.oopprojectwork;
 
 // class for creating luetemon objects
-public class Lutemon {
+public abstract class Lutemon {
     private String name;
-    private String color;
     private int attack;
     private int defense;
     private int experience;
@@ -12,14 +11,26 @@ public class Lutemon {
     private int maxHealth;
     private int idCounter;
     private int lutemonImageResource;
+    private int wins;
+    private int losses;
+    private int totalBattles;
 
-    public Lutemon(String name, String color, int attack, int defense, int experience, int health, int id) {
+    public Lutemon(String name, int attack, int defense, int experience, int health, int id, int wins, int losses, int totalBattles) {
         this.name = name;
-        this.color = color;
         this.attack = attack;
         this.defense = defense;
         this.experience = experience;
+        this.health = health;
+        this.id = id;
+        this.wins = wins;
+        this.losses = losses;
+        this.totalBattles = totalBattles;
+
+
     }
+    public abstract String getLutemonType();
+
+
 
     public int getAttack() {
         return attack;
@@ -40,6 +51,9 @@ public class Lutemon {
     public int getId() {
         return id;
     }
+    public int getTotalBattles() {
+        return totalBattles;
+    }
 
     public int getMaxHealth() {
         return maxHealth;
@@ -58,9 +72,19 @@ public class Lutemon {
         return name;
     }
 
-    public String getColor() {
-        return color;
+    public int getWins() {
+        return wins;
     }
+    public int getLosses() {
+        return losses;
+    }
+    private void setExperience(int experience){
+        this.experience = experience;
+    }
+    public void setHealth(int health){
+        this.health = health;
+    }
+
 
 
 

@@ -1,7 +1,6 @@
 package com.example.oopprojectwork;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         if (findViewById(R.id.btnViewHome) != null) {
             // We're on lutemon_battle screen
             setupBattleScreenNavigation();
-        } else if (findViewById(R.id.button4) != null) {
+        } else if (findViewById(R.id.training_btn) != null) {
             // We're on lutemon_home screen
             setupHomeScreenNavigation();
         } else if (findViewById(R.id.button8) != null) {
@@ -69,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupHomeScreenNavigation() {
         // Button from lutemon_home to training_area_lutemon
-        Button btnMoveToTraining = findViewById(R.id.button4);
+        Button btnMoveToTraining = findViewById(R.id.training_btn);
         btnMoveToTraining.setOnClickListener(v -> setContentView(R.layout.training_area_lutemon));
 
         // Button from lutemon_home to battle_lutemon
-        Button btnMoveToBattle = findViewById(R.id.button5);
+        Button btnMoveToBattle = findViewById(R.id.battle_btn);
         btnMoveToBattle.setOnClickListener(v -> setContentView(R.layout.battle_lutemon));
     }
 
