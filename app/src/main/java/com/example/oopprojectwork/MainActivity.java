@@ -3,6 +3,7 @@ package com.example.oopprojectwork;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    ImageView leftSword, rightSword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         setupCurrentScreenNavigation();
+
     }
 
     @Override
@@ -98,9 +103,13 @@ public class MainActivity extends AppCompatActivity {
         btnGoHome.setOnClickListener(v -> setContentView(R.layout.lutemon_battle));
 
         // Next Attack button (add your battle logic here)
+        leftSword = findViewById(R.id.imageView4);
+        rightSword = findViewById(R.id.imageView5);
+
         Button btnNextAttack = findViewById(R.id.button);
         btnNextAttack.setOnClickListener(v -> {
             // Add battle functionality here
+            AnimationManager.playSwordClashAnimation(MainActivity.this, leftSword, rightSword);
         });
 
     }
