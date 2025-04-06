@@ -74,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
         Button btnMoveToTraining = findViewById(R.id.btnMoveToTraining);
         btnMoveToTraining.setOnClickListener(v -> setContentView(R.layout.training_area_lutemon));
 
+        Button btnMoveToMenu = findViewById(R.id.btnMoveToMenu);
+        btnMoveToMenu.setOnClickListener(v -> setContentView(R.layout.lutemon_menu));
+
         // Button from lutemon_home to battle_lutemon
         Button btnMoveToBattle = findViewById(R.id.btnMoveToBattle);
         btnMoveToBattle.setOnClickListener(v -> {
