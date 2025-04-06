@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Button from lutemon_battle to battle_lutemon
         Button btnViewBattleArena = findViewById(R.id.btnViewBattleArena);
-        btnViewBattleArena.setOnClickListener(v -> setContentView(R.layout.battle_lutemon));
+        btnViewBattleArena.setOnClickListener(v -> setContentView(R.layout.battle_arena));
 
         // Button from lutemon_battle to create_new_lutemon
         Button btnCreateNew = findViewById(R.id.btnCreateNewLutemon);
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Button from lutemon_home to battle_lutemon
         Button btnMoveToBattle = findViewById(R.id.button5);
-        btnMoveToBattle.setOnClickListener(v -> setContentView(R.layout.battle_lutemon));
+        btnMoveToBattle.setOnClickListener(v -> setContentView(R.layout.battle_arena));
     }
 
     private void setupTrainingScreenNavigation() {
