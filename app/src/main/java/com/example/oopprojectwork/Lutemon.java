@@ -3,6 +3,7 @@ package com.example.oopprojectwork;
 // class for creating luetemon objects
 public abstract class Lutemon {
     private String name;
+    private String color;
     private int attack;
     private int defense;
     private int experience;
@@ -15,21 +16,28 @@ public abstract class Lutemon {
     private int losses;
     private int totalBattles;
 
-    public Lutemon(String name, int attack, int defense, int experience, int health, int id, int wins, int losses, int totalBattles) {
+    public Lutemon(String name, int attack, int defense, int health, String color) {
         this.name = name;
         this.attack = attack;
         this.defense = defense;
-        this.experience = experience;
+        this.color = color;
+        this.experience = 0;
         this.health = health;
-        this.id = id;
-        this.wins = wins;
-        this.losses = losses;
-        this.totalBattles = totalBattles;
+        this.wins = 0;
+        this.losses = 0;
+        this.totalBattles = 0;
 
 
     }
-    public abstract String getLutemonType();
 
+
+
+    public String color(){
+        return color;
+    }
+    public void setColor(String color){
+        this.color = color;
+    }
 
 
     public int getAttack() {

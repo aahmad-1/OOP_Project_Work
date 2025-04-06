@@ -6,6 +6,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class HomeActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Button trainingBtn;
@@ -19,11 +21,27 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.lutemon_home);
 
         recyclerView = findViewById(R.id.recyclerView);
-        trainingBtn = findViewById(R.id.training_btn);
-        battleBtn = findViewById(R.id.battle_btn);
-        menuBtn = findViewById(R.id.menu_btn);
+        trainingBtn = findViewById(R.id.btnMoveToTraining);
+        battleBtn = findViewById(R.id.btnMoveToBattle);
+        menuBtn = findViewById(R.id.btnMoveToMenu);
 
-        LutemonStorage.allLutemons.clear();
+        LutemonStorage.allLutemons.add(new Red("pikachu"));
+        LutemonStorage.allLutemons.add(new Green("charmander"));
+        LutemonStorage.allLutemons.add(new Pink("squirtle"));
+        LutemonStorage.allLutemons.add(new Orange("bulbasaur"));
+        LutemonStorage.allLutemons.add(new Black("jigglypuff"));
+
+        lutemonAdapter = new LutemonAdapter(LutemonStorage.allLutemons,this);
+        recyclerView.setAdapter(lutemonAdapter);
+
+        trainingBtn.setOnClickListener(v -> {
+            ArrayList<Lutemon> selectedLutemons = lutemonAdapter.getSelectedLutemons();
+            if (selectedLutemons.size() == 1) {
+                LutemonStorage.selected
+
+            }
+        });
+
     }
 
 
