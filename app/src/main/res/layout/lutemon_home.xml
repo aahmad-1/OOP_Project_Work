@@ -38,28 +38,46 @@
 
     <Button
         android:id="@+id/btnMoveToTraining"
-        android:layout_width="190dp"
+        android:layout_width="0dp"
         android:layout_height="70dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="9dp"
         android:text="Move to Training"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnMoveToBattle"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintEnd_toStartOf="@+id/btnMoveToMenu"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
     <Button
-        android:id="@+id/btnMoveToBattle"
-        android:layout_width="190dp"
+        android:id="@+id/btnMoveToMenu"
+        android:layout_width="0dp"
         android:layout_height="70dp"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="9dp"
+        android:text="Menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnMoveToBattle"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/btnMoveToTraining"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <Button
+        android:id="@+id/btnMoveToBattle"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="9dp"
         android:text="Move to Battle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnMoveToTraining"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/btnMoveToMenu"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
