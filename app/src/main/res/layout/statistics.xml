@@ -69,7 +69,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btnViewCharts"
         android:layout_width="397dp"
         android:layout_height="54dp"
         android:layout_marginStart="3dp"

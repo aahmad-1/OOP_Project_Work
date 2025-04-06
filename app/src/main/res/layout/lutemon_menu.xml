@@ -91,75 +91,23 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/textTrainingAreaTitle"
+                    android:id="@+id/textStatisticsiTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Training Area"
+                    android:text="Statistics"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textTrainingAreaCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="You have x Lutemon training"
-                    android:textColor="@android:color/black" />
 
                 <Button
-                    android:id="@+id/btnViewTrainingArea"
+                    android:id="@+id/btnViewStatistics"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@android:drawable/btn_default"
                     android:backgroundTint="#6A0DAD"
-                    android:text="View Training Area"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Battle Arena Card -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/textBattleArenaTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Battle Arena"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textBattleArenaCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="You have x Lutemons ready"
-                    android:textColor="@android:color/black" />
-
-                <Button
-                    android:id="@+id/btnViewBattleArena"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:drawable/btn_default"
-                    android:backgroundTint="#6A0DAD"
-                    android:text="View Battle Arena"
+                    android:text="View Statistics"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
