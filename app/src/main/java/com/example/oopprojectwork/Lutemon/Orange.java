@@ -1,4 +1,4 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Lutemon;
 
 public class Orange extends Lutemon {
     public Orange(String name) {

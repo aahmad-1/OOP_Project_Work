@@ -1,5 +1,7 @@
 package com.example.oopprojectwork;
 
+import com.example.oopprojectwork.Lutemon.Lutemon;
+
 import java.util.ArrayList;
 
 public class LutemonStorage {

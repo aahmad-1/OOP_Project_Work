@@ -1,4 +1,4 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Lutemon;
 
 // class for creating luetemon objects
 public abstract class Lutemon {
