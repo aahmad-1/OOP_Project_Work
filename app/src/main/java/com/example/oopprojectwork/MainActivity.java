@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
             setupBattleLutemonNavigation();
         } else if (findViewById(R.id.btnCancel) != null) {
             setupCreateLutemonNavigation();
+        } else if (findViewById(R.id.btnGoToMenu) != null) {
+            // We're on statistics screen
+            setupStatisticsScreenNavigation();
         }
         // Add more conditions if you have other screens
     }
@@ -131,5 +134,10 @@ public class MainActivity extends AppCompatActivity {
         btnCreate.setOnClickListener(v -> {
             // Add create functionality here
         });
+    }
+    private void setupStatisticsScreenNavigation() {
+        // Button from statistics to go back to menu
+        Button btnGoToMenu = findViewById(R.id.btnGoToMenu);
+        btnGoToMenu.setOnClickListener(v -> setContentView(R.layout.lutemon_menu));
     }
 }
