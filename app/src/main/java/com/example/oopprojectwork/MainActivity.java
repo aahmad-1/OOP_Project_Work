@@ -3,6 +3,10 @@ package com.example.oopprojectwork;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +17,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     ImageView leftSword, rightSword;
+
+    ProgressBar trainingProgress;
+    View flashOverlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +82,12 @@ public class MainActivity extends AppCompatActivity {
     private void setupHomeScreenNavigation() {
         // Button from lutemon_home to training_area_lutemon
         Button btnMoveToTraining = findViewById(R.id.btnMoveToTraining);
-        btnMoveToTraining.setOnClickListener(v -> setContentView(R.layout.training_area_lutemon));
+        btnMoveToTraining.setOnClickListener(v -> {
+            setContentView(R.layout.training_area_lutemon);
+
+            trainingProgress = findViewById(R.id.progressBar);  // ProgressBar from XML
+            flashOverlay = findViewById(R.id.flashOverlay);
+        });
 
         Button btnMoveToMenu = findViewById(R.id.btnMoveToMenu);
         btnMoveToMenu.setOnClickListener(v -> setContentView(R.layout.lutemon_menu));
@@ -98,19 +110,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Train button (add your training logic here)
         Button btnTrain = findViewById(R.id.btnTrain);
+        TextView trainingCompleteText = findViewById(R.id.textView10);
         btnTrain.setOnClickListener(v -> {
             // Add training functionality here
+            AnimationManager.startTrainingAnimation(trainingProgress, flashOverlay,trainingCompleteText);
         });
     }
 
     private void setupBattleLutemonNavigation() {
-        // Initialize sword ImageViews if they're null
-        if (leftSword == null) {
-            leftSword = findViewById(R.id.imageView4);
-        }
-        if (rightSword == null) {
-            rightSword = findViewById(R.id.imageView5);
-        }
 
         // Button from battle_lutemon to go to home
         Button btnGoHome = findViewById(R.id.btnLutemonHome);

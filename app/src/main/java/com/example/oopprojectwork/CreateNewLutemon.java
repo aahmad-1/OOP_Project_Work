@@ -9,7 +9,12 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.oopprojectwork.Lutemon.Black;
+import com.example.oopprojectwork.Lutemon.Green;
 import com.example.oopprojectwork.Lutemon.Lutemon;
+import com.example.oopprojectwork.Lutemon.Orange;
+import com.example.oopprojectwork.Lutemon.Pink;
+import com.example.oopprojectwork.Lutemon.Red;
 
 public class CreateNewLutemon extends AppCompatActivity {
 
