@@ -83,7 +83,13 @@ public class MainActivity extends AppCompatActivity {
 
         // Button from lutemon_battle to create_new_lutemon
         Button btnCreateNew = findViewById(R.id.btnCreateNewLutemon);
-        btnCreateNew.setOnClickListener(v -> setContentView(R.layout.create_new_lutemon));
+        btnCreateNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CreateNewLutemon.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setupHomeScreenNavigation() {
