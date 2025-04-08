@@ -47,7 +47,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
                     selectedLutemons.add(lutemon);
                 }else{
                     holder.checkBox.setChecked(false);
-                    Toast.makeText(context, "You can only select 2 lutemons", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "You can only select 2 lutemons for battle or 1 for training", Toast.LENGTH_SHORT).show();
                 }
 
             } else {

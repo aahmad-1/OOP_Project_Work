@@ -1,7 +1,9 @@
 package com.example.oopprojectwork.Lutemon;
 
+import java.io.Serializable;
+
 // class for creating luetemon objects
-public abstract class Lutemon {
+public abstract class Lutemon implements Serializable {
     private String name;
     private String color;
     private int attack;

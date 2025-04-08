@@ -1,7 +1,9 @@
 package com.example.oopprojectwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,9 +47,22 @@ public class HomeActivity extends AppCompatActivity {
         trainingBtn.setOnClickListener(v -> {
             ArrayList<Lutemon> selectedLutemons = lutemonAdapter.getSelectedLutemons();
             if (selectedLutemons.size() == 1) {
-                //LutemonStorage.selected
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("lutemon", selectedLutemons);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Select at least one Lutemon!", Toast.LENGTH_SHORT).show();
+            }
 
-
+        });
+        battleBtn.setOnClickListener(view -> {
+            ArrayList<Lutemon> selected = lutemonAdapter.getSelectedLutemons();
+            if (selected.size() == 2) {
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("lutemons", selected);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Select exactly two Lutemons for battle!", Toast.LENGTH_SHORT).show();
             }
         });
 
