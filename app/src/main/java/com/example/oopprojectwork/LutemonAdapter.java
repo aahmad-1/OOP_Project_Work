@@ -23,6 +23,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
     public LutemonAdapter(ArrayList<Lutemon> lutemons, Context context) {
         this.lutemons = lutemons;
         this.context = context;
+        this.selectedLutemons = new ArrayList<>();
     }
 
     @NonNull
@@ -36,7 +37,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
     public void onBindViewHolder(@NonNull LutemonAdapter.LutemonViewHolder holder, int position) {
         Lutemon lutemon = lutemons.get(position);
         holder.lutemonName.setText(lutemon.getName());
-        holder.lutemonDetails.setText("ATK: " + lutemon.getAttack() + "/n DEF: " + lutemon.getDefense() + "/n HP: " + lutemon.getHealth());
+        holder.lutemonDetails.setText("ATK: " + lutemon.getAttack() + "\nDEF: " + lutemon.getDefense() + "\nHP: " + lutemon.getHealth());
         holder.lutemonImage.setImageResource(lutemon.getLutemonImageResource());
 
         holder.checkBox.setOnCheckedChangeListener(null);

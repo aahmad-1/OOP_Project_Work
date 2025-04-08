@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oopprojectwork.Lutemon.Lutemon;
@@ -40,9 +41,12 @@ public class HomeActivity extends AppCompatActivity {
         LutemonStorage.allLutemons.add(new Pink("squirtle"));
         LutemonStorage.allLutemons.add(new Orange("bulbasaur"));
         LutemonStorage.allLutemons.add(new Black("jigglypuff"));
+        LutemonStorage.allLutemons.add(new Red("mewtwo"));
 
         lutemonAdapter = new LutemonAdapter(LutemonStorage.allLutemons,this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(lutemonAdapter);
+
 
         trainingBtn.setOnClickListener(v -> {
             ArrayList<Lutemon> selectedLutemons = lutemonAdapter.getSelectedLutemons();
