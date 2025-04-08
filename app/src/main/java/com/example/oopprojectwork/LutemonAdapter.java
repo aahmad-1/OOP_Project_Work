@@ -1,6 +1,7 @@
 package com.example.oopprojectwork;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -29,7 +30,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
     @NonNull
     @Override
     public LutemonAdapter.LutemonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = View.inflate(context, R.layout.item_lutemon, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_lutemon, parent, false);
         return new LutemonViewHolder(view);
     }
 

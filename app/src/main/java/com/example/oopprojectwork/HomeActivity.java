@@ -43,8 +43,9 @@ public class HomeActivity extends AppCompatActivity {
         LutemonStorage.allLutemons.add(new Black("jigglypuff"));
         LutemonStorage.allLutemons.add(new Red("mewtwo"));
 
-        lutemonAdapter = new LutemonAdapter(LutemonStorage.allLutemons,this);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        lutemonAdapter = new LutemonAdapter(LutemonStorage.allLutemons,this);
         recyclerView.setAdapter(lutemonAdapter);
 
 
