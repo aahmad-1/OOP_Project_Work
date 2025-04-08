@@ -1,5 +1,6 @@
 package com.example.oopprojectwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -68,7 +69,13 @@ public class MainActivity extends AppCompatActivity {
     private void setupBattleScreenNavigation() {
         // Button from lutemon_battle to lutemon_home
         Button btnViewHome = findViewById(R.id.btnViewHome);
-        btnViewHome.setOnClickListener(v -> setContentView(R.layout.lutemon_home));
+        btnViewHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Button from lutemon_battle to statistics
         Button btnViewTraining = findViewById(R.id.btnViewStatistics);
