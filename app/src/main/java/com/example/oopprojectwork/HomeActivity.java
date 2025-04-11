@@ -48,10 +48,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
         trainingBtn.setOnClickListener(v -> {
-            ArrayList<Lutemon> selectedLutemons = lutemonAdapter.getSelectedLutemons();
-            if (selectedLutemons.size() == 1) {
+            LutemonStorage.selectedForTraining = lutemonAdapter.getSelectedLutemons();
+            if (LutemonStorage.selectedForTraining.size() == 1) {
                 Intent intent = new Intent(this, MainActivity.class);
-                intent.putExtra("lutemon", selectedLutemons);
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Select at least one Lutemon!", Toast.LENGTH_SHORT).show();
@@ -61,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         battleBtn.setOnClickListener(view -> {
             ArrayList<Lutemon> selected = lutemonAdapter.getSelectedLutemons();
             if (selected.size() == 2) {
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, BattleActivity.class);
                 intent.putExtra("lutemons", selected);
                 startActivity(intent);
             } else {

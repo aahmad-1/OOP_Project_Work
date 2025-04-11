@@ -113,8 +113,10 @@ public abstract class Lutemon implements Serializable {
         this.health = health;
     }
 
-
-
+    @Override
+    public String toString() {
+        return name + " (" + color() + ") \nATK: " + attack + ", \nDEF: " + defense + ", \nHP: " + health;
+    }
 
 
 

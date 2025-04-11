@@ -5,4 +5,8 @@ public class Pink extends Lutemon {
         super(name, 7, 2, 18,"pink");
     }
 
+    @Override
+    public String color() {
+        return "Pink";
+    }
 }
