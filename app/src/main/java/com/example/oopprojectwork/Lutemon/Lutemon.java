@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 // class for creating luetemon objects
 public abstract class Lutemon implements Serializable {
+
+    private int imageResource;
     private String name;
     private String color;
     private int attack;
@@ -21,7 +23,7 @@ public abstract class Lutemon implements Serializable {
 
 
 
-    public Lutemon(String name, int attack, int defense, int health, String color) {
+    public Lutemon(String name, int attack, int defense, int health, String color, int imageResource) {
         this.name = name;
         this.attack = attack;
         this.defense = defense;
@@ -31,6 +33,7 @@ public abstract class Lutemon implements Serializable {
         this.wins = 0;
         this.losses = 0;
         this.totalBattles = 0;
+        this.imageResource = imageResource;
 
 
     }
@@ -60,6 +63,8 @@ public abstract class Lutemon implements Serializable {
     }
 
 
+    // Add getter for imageResource
+    public int getImageResource() {return imageResource;}
     public int getAttack() {
         return attack;
     }
