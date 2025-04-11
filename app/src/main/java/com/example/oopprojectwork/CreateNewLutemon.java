@@ -1,10 +1,10 @@
 package com.example.oopprojectwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -36,21 +36,22 @@ public class CreateNewLutemon extends AppCompatActivity {
         // Set up the radio button listener to update the preview image
         colorGroup.setOnCheckedChangeListener((group, checkedId) -> updatePreviewImage(checkedId));
 
-        // Set the default image based on the default selected radio button
-        int defaultSelectedId = colorGroup.getCheckedRadioButtonId();
-        if (defaultSelectedId != -1) {
-            updatePreviewImage(defaultSelectedId);
-        } else {
-            // Pre-select the first radio button if none is selected
-            RadioButton firstRadioButton = (RadioButton) colorGroup.getChildAt(0);
-            if (firstRadioButton != null) {
-                firstRadioButton.setChecked(true);
-            }
-        }
+        // We removed the auto-selection of the first radio button as requested
 
         createButton.setOnClickListener(v -> {
-            String name = editName.getText().toString();
+            String name = editName.getText().toString().trim();
             int selectedId = colorGroup.getCheckedRadioButtonId();
+
+            // Validate inputs
+            if (selectedId == -1) {
+                Toast.makeText(this, "Please select a Lutemon first", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (name.isEmpty()) {
+                Toast.makeText(this, "Please enter a name for your Lutemon first", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             Lutemon newLutemon;
 
@@ -68,7 +69,11 @@ public class CreateNewLutemon extends AppCompatActivity {
 
             LutemonStorage.allLutemons.add(newLutemon);
             Toast.makeText(this, "Lutemon created!", Toast.LENGTH_SHORT).show();
-            finish(); // Go back to list
+
+            // Navigate to Home screen instead of just finishing
+            Intent intent = new Intent(CreateNewLutemon.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
         });
 
         cancelButton.setOnClickListener(v -> finish());
