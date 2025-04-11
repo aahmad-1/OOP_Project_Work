@@ -33,6 +33,7 @@ android {
 
 dependencies {
 
+    implementation(libs.anychart.android)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
