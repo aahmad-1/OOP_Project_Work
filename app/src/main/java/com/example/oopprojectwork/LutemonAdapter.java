@@ -40,6 +40,9 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
         holder.lutemonName.setText(lutemon.getName());
         holder.lutemonDetails.setText("ATK: " + lutemon.getAttack() + "\nDEF: " + lutemon.getDefense() + "\nHP: " + lutemon.getHealth());
 
+        // Set the image based on Lutemon type
+        holder.lutemonImage.setImageResource(lutemon.getImageResource());
+
         holder.checkBox.setOnCheckedChangeListener(null);
         holder.checkBox.setChecked(selectedLutemons.contains(lutemon));
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -77,12 +80,14 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
         TextView lutemonName;
         TextView lutemonDetails;
         CheckBox checkBox;
+        ImageView lutemonImage;
 
         public LutemonViewHolder(@NonNull View itemView) {
             super(itemView);
             lutemonName = itemView.findViewById(R.id.name_lutemon);
             lutemonDetails = itemView.findViewById(R.id.lutemon_details);
             checkBox = itemView.findViewById(R.id.checkBox);
+            lutemonImage = itemView.findViewById(R.id.imageView2);
 
         }
 

@@ -156,7 +156,7 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
-        <!-- Small gray text at bottom -->
+        <!-- Small gray text at bottom :)-->
         <TextView
             android:id="@+id/create_lutemon_screen_text"
             android:layout_width="wrap_content"
