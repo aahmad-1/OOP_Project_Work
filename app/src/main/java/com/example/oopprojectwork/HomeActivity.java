@@ -69,6 +69,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        menuBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        });
+
+
     }
 
 
