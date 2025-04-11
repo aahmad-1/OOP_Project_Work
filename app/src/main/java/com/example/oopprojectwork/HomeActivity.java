@@ -36,13 +36,11 @@ public class HomeActivity extends AppCompatActivity {
         battleBtn = findViewById(R.id.btnMoveToBattle);
         menuBtn = findViewById(R.id.btnMoveToMenu);
 
-        LutemonStorage.allLutemons.add(new Red("pikachu"));
-        LutemonStorage.allLutemons.add(new Green("charmander"));
-        LutemonStorage.allLutemons.add(new Pink("squirtle"));
-        LutemonStorage.allLutemons.add(new Orange("bulbasaur"));
-        LutemonStorage.allLutemons.add(new Black("jigglypuff"));
-        LutemonStorage.allLutemons.add(new Red("mewtwo"));
-
+        LutemonStorage.allLutemons.add(new Red("scizer"));
+        LutemonStorage.allLutemons.add(new Green("snivy"));
+        LutemonStorage.allLutemons.add(new Pink("mew"));
+        LutemonStorage.allLutemons.add(new Orange("charmander"));
+        LutemonStorage.allLutemons.add(new Black("umbreon"));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         lutemonAdapter = new LutemonAdapter(LutemonStorage.allLutemons,this);

@@ -76,7 +76,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Training Area Card -->
+        <!-- Statistics Card -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,7 +99,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-
                 <Button
                     android:id="@+id/btnViewStatistics"
                     android:layout_width="match_parent"
@@ -114,12 +113,44 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Image Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/charmander_menu_screen" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_weight="1"
+                android:src="@drawable/pikachu_menu_screen"
+                android:scaleType="fitCenter"
+                android:padding="5dp"/>
+        </LinearLayout>
+
+        <!-- Spacer to push content down -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"/>
+
         <!-- Create New Lutemon Button -->
         <Button
             android:id="@+id/btnCreateNewLutemon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:background="@android:drawable/btn_default"
             android:backgroundTint="#A5D6A7"
             android:text="Create new Lutemon"
@@ -131,6 +162,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
             android:text="Home Screen"
             android:textColor="@android:color/darker_gray"
             android:textSize="12sp" />
