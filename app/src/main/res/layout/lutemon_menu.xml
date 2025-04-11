@@ -145,7 +145,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"/>
 
-        <!-- Create New Lutemon Button -->
+        <!-- Create New Lutemon Button blah blah-->
         <Button
             android:id="@+id/btnCreateNewLutemon"
             android:layout_width="match_parent"

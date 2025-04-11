@@ -40,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
         LutemonStorage.allLutemons.add(new Green("snivy"));
         LutemonStorage.allLutemons.add(new Pink("mew"));
         LutemonStorage.allLutemons.add(new Orange("charmander"));
-        LutemonStorage.allLutemons.add(new Black("umbreon"));
+        LutemonStorage.allLutemons.add(new Black("umbreon")); // blah blah
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         lutemonAdapter = new LutemonAdapter(LutemonStorage.allLutemons,this);
