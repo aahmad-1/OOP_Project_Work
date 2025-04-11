@@ -26,6 +26,7 @@
         <!-- Other Activities -->
         <activity android:name=".HomeActivity" android:exported="true" />
         <activity android:name=".CreateNewLutemon" android:exported="true" />
+        <activity android:name=".FragmentsActivity" android:exported="true" />
 
     </application>
 

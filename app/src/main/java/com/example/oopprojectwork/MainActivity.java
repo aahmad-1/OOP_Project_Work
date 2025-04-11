@@ -79,7 +79,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Button from lutemon_battle to statistics
         Button btnViewTraining = findViewById(R.id.btnViewStatistics);
-        btnViewTraining.setOnClickListener(v -> setContentView(R.layout.statistics));
+        btnViewTraining.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FragmentsActivity.class);
+            startActivity(intent);
+        });
+
 
         // Button from lutemon_battle to create_new_lutemon
         Button btnCreateNew = findViewById(R.id.btnCreateNewLutemon);
