@@ -3,6 +3,8 @@ package com.example.oopprojectwork;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -18,6 +20,8 @@ import com.example.oopprojectwork.Lutemon.Red;
 
 public class CreateNewLutemon extends AppCompatActivity {
 
+    private ImageView lutemonPreview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,23 @@ public class CreateNewLutemon extends AppCompatActivity {
         EditText editName = findViewById(R.id.editLutemonName);
         RadioGroup colorGroup = findViewById(R.id.radioColorGroup);
         Button createButton = findViewById(R.id.btnCreate);
+        Button cancelButton = findViewById(R.id.btnCancel);
+        lutemonPreview = findViewById(R.id.lutemonPreview);
+
+        // Set up the radio button listener to update the preview image
+        colorGroup.setOnCheckedChangeListener((group, checkedId) -> updatePreviewImage(checkedId));
+
+        // Set the default image based on the default selected radio button
+        int defaultSelectedId = colorGroup.getCheckedRadioButtonId();
+        if (defaultSelectedId != -1) {
+            updatePreviewImage(defaultSelectedId);
+        } else {
+            // Pre-select the first radio button if none is selected
+            RadioButton firstRadioButton = (RadioButton) colorGroup.getChildAt(0);
+            if (firstRadioButton != null) {
+                firstRadioButton.setChecked(true);
+            }
+        }
 
         createButton.setOnClickListener(v -> {
             String name = editName.getText().toString();
@@ -51,7 +72,21 @@ public class CreateNewLutemon extends AppCompatActivity {
             finish(); // Go back to list
         });
 
-
+        cancelButton.setOnClickListener(v -> finish());
     }
 
+    private void updatePreviewImage(int selectedRadioButtonId) {
+        // Set the appropriate image based on the selected radio button
+        if (selectedRadioButtonId == R.id.radioRed) {
+            lutemonPreview.setImageResource(R.drawable.scizer_facing_right);
+        } else if (selectedRadioButtonId == R.id.radioGreen) {
+            lutemonPreview.setImageResource(R.drawable.snivy_facing_right);
+        } else if (selectedRadioButtonId == R.id.radioPink) {
+            lutemonPreview.setImageResource(R.drawable.mew_facing_right);
+        } else if (selectedRadioButtonId == R.id.radioOrange) {
+            lutemonPreview.setImageResource(R.drawable.charmander_menu_screen);
+        } else if (selectedRadioButtonId == R.id.radioBlack) {
+            lutemonPreview.setImageResource(R.drawable.umbreon_facing_right);
+        }
+    }
 }

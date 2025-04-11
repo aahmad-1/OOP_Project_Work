@@ -57,7 +57,6 @@
             android:paddingLeft="24dp"/>
 
         <!-- Color Options -->
-        <!-- Color Options -->
         <RadioGroup
             android:id="@+id/radioColorGroup"
             android:layout_width="match_parent"
@@ -118,15 +117,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginBottom="24dp"
-            android:visibility="invisible">
+            android:visibility="visible">
 
-            <View
+            <ImageView
                 android:id="@+id/lutemonPreview"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@android:color/black"
-                android:backgroundTint="@android:color/black"
-                android:shape="oval"/>
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:contentDescription="Lutemon preview image"
+                android:scaleType="fitCenter" />
         </LinearLayout>
 
         <!-- Create Button -->
