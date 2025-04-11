@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.oopprojectwork.Lutemon.Black;
 import com.example.oopprojectwork.Lutemon.Green;
 import com.example.oopprojectwork.Lutemon.Lutemon;
