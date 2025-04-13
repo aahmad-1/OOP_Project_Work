@@ -16,11 +16,13 @@ import java.util.ArrayList;
 
 public class BattleActivity extends AppCompatActivity {
 
-    private ImageView leftSword, rightSword;
-
+    private ImageView leftSword, rightSword, lutemonPic1, lutemonPic2;
 
     private Lutemon lutemon1;
     private Lutemon lutemon2;
+
+    private ProgressBar healthBar1;
+    private ProgressBar healthBar2;
     private TextView battleLogs;
     private TextView name1;
     private TextView name2;
@@ -40,6 +42,9 @@ public class BattleActivity extends AppCompatActivity {
         leftSword = findViewById(R.id.imageView4);
         rightSword = findViewById(R.id.imageView5);
 
+        healthBar1 = findViewById(R.id.healthBar1);
+        healthBar2 = findViewById(R.id.healthBar2);
+
         name1 = findViewById(R.id.textView3);
         name2 = findViewById(R.id.textView4);
         attackerInfo = findViewById(R.id.battleInfoAttacker);
@@ -47,6 +52,9 @@ public class BattleActivity extends AppCompatActivity {
         btnNextAttack = findViewById(R.id.btnNextAttack);
         btnLutemonHome = findViewById(R.id.btnLutemonHome);
         battleLogs = findViewById(R.id.battleLogs);
+
+        lutemonPic1 = findViewById(R.id.imageView7);
+        lutemonPic2 = findViewById(R.id.imageView8);
 
         lutemonsBattle = (ArrayList<Lutemon>) getIntent().getSerializableExtra("lutemons");
         lutemon1 = lutemonsBattle.get(0);
@@ -56,6 +64,15 @@ public class BattleActivity extends AppCompatActivity {
         name2.setText(lutemon2.getName());
         attackerInfo.setText(lutemon1.toString());
         defenderInfo.setText(lutemon2.toString());
+        lutemonPic1.setImageResource(lutemon1.getImageResource());
+        lutemonPic2.setImageResource(lutemon2.getImageResource());
+
+        healthBar1.setMax(lutemon1.getHealth());
+        healthBar1.setProgress(lutemon1.getHealth());
+
+        healthBar2.setMax(lutemon2.getHealth());
+        healthBar2.setProgress(lutemon2.getHealth());
+
 
         btnNextAttack.setOnClickListener(view -> {
             Lutemon attacker;
@@ -73,6 +90,10 @@ public class BattleActivity extends AppCompatActivity {
             int damage = Math.max(attacker.getAttack() - defender.getDefense(), 0);
             int newHealth = Math.max(defender.getHealth() - damage, 0);
             defender.setHealth(newHealth);
+
+            // 🩹 Update health bar
+            healthBar1.setProgress(lutemon1.getHealth());
+            healthBar2.setProgress(lutemon2.getHealth());
 
             // 📝 Update UI
             attackerInfo.setText(lutemon1.toString());

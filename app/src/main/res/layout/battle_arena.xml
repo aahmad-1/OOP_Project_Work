@@ -30,13 +30,38 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/healthBar1"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="112dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/progress_health"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ProgressBar
+        android:id="@+id/healthBar2"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="112dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="9dp"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/progress_health"
+        app:layout_constraintStart_toEndOf="@+id/healthBar1"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
     <TextView
         android:id="@+id/battleLogs"
         android:layout_width="411dp"
         android:layout_height="160dp"
         android:layout_marginBottom="12dp"
         android:background="@color/white"
-        android:text="battle logs"
         app:layout_constraintBottom_toTopOf="@+id/btnNextAttack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
