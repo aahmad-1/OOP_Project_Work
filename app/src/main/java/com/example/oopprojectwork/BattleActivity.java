@@ -2,17 +2,23 @@ package com.example.oopprojectwork;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.oopprojectwork.Lutemon.Lutemon;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class BattleActivity extends AppCompatActivity {
+
+    private ImageView leftSword, rightSword;
+
+
     private Lutemon lutemon1;
     private Lutemon lutemon2;
     private TextView battleLogs;
@@ -22,12 +28,18 @@ public class BattleActivity extends AppCompatActivity {
     private TextView defenderInfo;
     private Button btnNextAttack;
     private Button btnLutemonHome;
-    ArrayList<Lutemon> lutemonsBattle;
+    private ArrayList<Lutemon> lutemonsBattle;
+    private boolean isLutemon1Turn = true; // Track whose turn it is
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.battle_arena);
+
+
+        leftSword = findViewById(R.id.imageView4);
+        rightSword = findViewById(R.id.imageView5);
+
         name1 = findViewById(R.id.textView3);
         name2 = findViewById(R.id.textView4);
         attackerInfo = findViewById(R.id.battleInfoAttacker);
@@ -39,21 +51,23 @@ public class BattleActivity extends AppCompatActivity {
         lutemonsBattle = (ArrayList<Lutemon>) getIntent().getSerializableExtra("lutemons");
         lutemon1 = lutemonsBattle.get(0);
         lutemon2 = lutemonsBattle.get(1);
+
         name1.setText(lutemon1.getName());
         name2.setText(lutemon2.getName());
         attackerInfo.setText(lutemon1.toString());
         defenderInfo.setText(lutemon2.toString());
 
-
-
         btnNextAttack.setOnClickListener(view -> {
-
             Lutemon attacker;
             Lutemon defender;
 
-
-            attacker = lutemon1;
-            defender = lutemon2;
+            if (isLutemon1Turn) {
+                attacker = lutemon1;
+                defender = lutemon2;
+            } else {
+                attacker = lutemon2;
+                defender = lutemon1;
+            }
 
             // ⚔️ Calculate damage
             int damage = Math.max(attacker.getAttack() - defender.getDefense(), 0);
@@ -61,8 +75,8 @@ public class BattleActivity extends AppCompatActivity {
             defender.setHealth(newHealth);
 
             // 📝 Update UI
-            attackerInfo.setText(attacker.toString());
-            defenderInfo.setText(defender.toString());
+            attackerInfo.setText(lutemon1.toString());
+            defenderInfo.setText(lutemon2.toString());
 
             battleLogs.append(attacker.getName() + " attacked " + defender.getName() + " for " + damage + " damage.\n");
 
@@ -78,29 +92,15 @@ public class BattleActivity extends AppCompatActivity {
                 btnNextAttack.setText("Battle Over");
             } else {
                 // 🔁 Switch turn
-                attacker = lutemon2;
-                defender = lutemon1;
+                isLutemon1Turn = !isLutemon1Turn;
             }
+            AnimationManager.playSwordClashAnimation(BattleActivity.this, leftSword, rightSword);
+
         });
+
         btnLutemonHome.setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
-
-        //hivubvjbv
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

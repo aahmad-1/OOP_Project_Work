@@ -3,7 +3,7 @@ package com.example.oopprojectwork;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView;
+
 import android.widget.ProgressBar;
 
 import android.view.View;
@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView leftSword, rightSword;
+
 
     ProgressBar trainingProgress;
     View flashOverlay;
@@ -114,8 +114,7 @@ public class MainActivity extends AppCompatActivity {
         btnMoveToBattle.setOnClickListener(v -> {
             setContentView(R.layout.battle_arena);
             // Initialize sword ImageViews immediately after setting the battle arena content
-            leftSword = findViewById(R.id.imageView4);
-            rightSword = findViewById(R.id.imageView5);
+
             setupBattleLutemonNavigation();
         });
     }
@@ -143,9 +142,7 @@ public class MainActivity extends AppCompatActivity {
         // Next Attack button
         Button btnNextAttack = findViewById(R.id.btnNextAttack);
         btnNextAttack.setOnClickListener(v -> {
-            if (leftSword != null && rightSword != null) {
-                AnimationManager.playSwordClashAnimation(MainActivity.this, leftSword, rightSword);
-            }
+
         });
     }
     private void setupCreateLutemonNavigation() {
