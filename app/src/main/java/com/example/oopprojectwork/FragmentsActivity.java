@@ -24,7 +24,9 @@ public class FragmentsActivity extends AppCompatActivity {
 
         // Set up buttons
         Button btnStats = findViewById(R.id.btnStatistics);
-        Button btnCharts = findViewById(R.id.btnCharts);
+        Button btnPieCharts = findViewById(R.id.btnPieChart);
+        Button btnBarGraph = findViewById(R.id.btnBarGraph);
+
 
         btnStats.setOnClickListener(v -> {
             getSupportFragmentManager().beginTransaction()
@@ -32,9 +34,15 @@ public class FragmentsActivity extends AppCompatActivity {
                     .commit();
         });
 
-        btnCharts.setOnClickListener(v -> {
+        btnPieCharts.setOnClickListener(v -> {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.contentFragmentContainer, new ChartsFragment())
+                    .replace(R.id.contentFragmentContainer, new PieChartsFragment())
+                    .commit();
+        });
+
+        btnBarGraph.setOnClickListener(v -> {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.contentFragmentContainer, new BarGraphFragment())
                     .commit();
         });
 
