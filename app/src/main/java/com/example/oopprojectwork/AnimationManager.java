@@ -5,6 +5,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.view.View;
 
@@ -28,19 +29,40 @@ public class AnimationManager {
         leftSword.setVisibility(View.VISIBLE);
         rightSword.setVisibility(View.VISIBLE);
 
+        // Prepare MediaPlayer for the clash sound
+        final MediaPlayer clashSound = MediaPlayer.create(context, R.raw.sword_clash);
+
+        // Set listener to repeat the sound once
+        clashSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            private int playCount = 0;
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (playCount < 1) { // Repeat once
+                    playCount++;
+                    clashSound.start();
+                } else {
+                    clashSound.release(); // Release resources after the second play
+                }
+            }
+        });
+
         // Start the first clash animation
         leftSword.startAnimation(leftAnim);
         rightSword.startAnimation(rightAnim);
 
-        // Use a handler to delay the second clash after the first one completes
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // Start the second clash animation
-                leftSword.startAnimation(leftAnim);
-                rightSword.startAnimation(rightAnim);
-            }
-        }, leftAnim.getDuration()); // Use the duration of the first animation for the delay
+        // Play the clash sound
+        clashSound.start();
+
+        // Add a slight delay for the second clash
+        new Handler().postDelayed(() -> {
+            // Start the second clash animation
+            leftSword.startAnimation(leftAnim);
+            rightSword.startAnimation(rightAnim);
+
+            // Play the clash sound again
+            clashSound.start();
+        }, leftAnim.getDuration() + 200); // Add 200ms delay after the first animation
     }
 
     public static void startTrainingAnimation(final ProgressBar progressBar, final View flashOverlay, final TextView completionText) {

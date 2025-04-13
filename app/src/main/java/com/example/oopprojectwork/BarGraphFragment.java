@@ -39,16 +39,34 @@ public class BarGraphFragment extends Fragment {
 
         return view;
     }
+
     private void setupBarGraph(AnyChartView anyChartView) {
         // Initialize Bar chart
         Cartesian bar = AnyChart.bar();
 
         // Initialize total wins for each color
-        int redWins = 6;
-        int blackWins = 8;
-        int greenWins = 11;
-        int orangeWins = 10;
-        int pinkWins = 17;
+        List<Lutemon> lutemons = LutemonStorage.allLutemons; // Replace with your actual data source
+        int redWins = 2, blackWins = 10, greenWins = 7, orangeWins = 4, pinkWins = 17;
+
+        for (Lutemon lutemon : lutemons) {
+            switch (lutemon.color()) {
+                case "Red":
+                    redWins += lutemon.getWins();
+                    break;
+                case "Black":
+                    blackWins += lutemon.getWins();
+                    break;
+                case "Green":
+                    greenWins += lutemon.getWins();
+                    break;
+                case "Orange":
+                    orangeWins += lutemon.getWins();
+                    break;
+                case "Pink":
+                    pinkWins += lutemon.getWins();
+                    break;
+            }
+        }
 
         // Prepare data for the bar graph
         List<DataEntry> data = new ArrayList<>();

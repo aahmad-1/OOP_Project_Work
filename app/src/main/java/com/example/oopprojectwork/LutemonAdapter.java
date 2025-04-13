@@ -84,8 +84,8 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
 
         public LutemonViewHolder(@NonNull View itemView) {
             super(itemView);
-            lutemonName = itemView.findViewById(R.id.name_lutemon);
-            lutemonDetails = itemView.findViewById(R.id.lutemon_details);
+            lutemonName = itemView.findViewById(R.id.lutemon_name);
+            lutemonDetails = itemView.findViewById(R.id.lutemon_stats);
             checkBox = itemView.findViewById(R.id.checkBox);
             lutemonImage = itemView.findViewById(R.id.imageView2);
 
