@@ -15,4 +15,12 @@ public class LutemonStorage {
     public static ArrayList<Lutemon> allLutemons = new ArrayList<>();
 
 
+    // three built in lutemons
+    static {
+        allLutemons.add(new Red("scizer"));
+        allLutemons.add(new Green("snivy"));
+        allLutemons.add(new Pink("mew"));
+    }
+
+
 }

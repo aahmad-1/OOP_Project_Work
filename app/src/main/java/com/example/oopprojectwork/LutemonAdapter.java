@@ -38,7 +38,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
     public void onBindViewHolder(@NonNull LutemonAdapter.LutemonViewHolder holder, int position) {
         Lutemon lutemon = lutemons.get(position);
         holder.lutemonName.setText(lutemon.getName());
-        holder.lutemonDetails.setText("ATK: " + lutemon.getAttack() + "\nDEF: " + lutemon.getDefense() + "\nHP: " + lutemon.getHealth());
+        holder.lutemonDetails.setText("ATK: " + lutemon.getAttack() + "\nDEF: " + lutemon.getDefense() + "\nHP: " + lutemon.getHealth()+"\nEXP: "+lutemon.getExperience());
 
         // Set the image based on Lutemon type
         holder.lutemonImage.setImageResource(lutemon.getImageResourceRight());
