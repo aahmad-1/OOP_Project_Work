@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.oopprojectwork.BattleActivity;
+import com.example.oopprojectwork.Activities.BattleActivity;
 import com.example.oopprojectwork.Lutemon.Lutemon;
 import com.example.oopprojectwork.Lutemon.Red;
 import com.example.oopprojectwork.Lutemon.Green;
@@ -40,11 +40,6 @@ public class HomeActivity extends AppCompatActivity {
         battleBtn = findViewById(R.id.btnMoveToBattle);
         menuBtn = findViewById(R.id.btnMoveToMenu);
 
-        LutemonStorage.allLutemons.add(new Red("scizer"));
-        LutemonStorage.allLutemons.add(new Green("snivy"));
-        LutemonStorage.allLutemons.add(new Pink("mew"));
-        LutemonStorage.allLutemons.add(new Orange("charmander"));
-        LutemonStorage.allLutemons.add(new Black("umbreon")); // blah blah
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         lutemonAdapter = new LutemonAdapter(LutemonStorage.allLutemons,this);

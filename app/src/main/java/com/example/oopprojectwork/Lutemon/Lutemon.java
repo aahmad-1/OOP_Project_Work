@@ -120,7 +120,7 @@ public abstract class Lutemon implements Serializable {
 
     @Override
     public String toString() {
-        return name + " (" + color() + ") \nATK: " + attack + ", \nDEF: " + defense + ", \nHP: " + health;
+        return name + " (" + color() + ") \nATK: " + attack + ", \nDEF: " + defense + ", \nHP: " + health + "\nEXP: " + experience;
     }
 
 
