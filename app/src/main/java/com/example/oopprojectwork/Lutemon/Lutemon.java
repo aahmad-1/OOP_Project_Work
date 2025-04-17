@@ -10,6 +10,7 @@ public abstract class Lutemon implements Serializable {
     private int imageResource;
     private String name;
     private String color;
+    private int MaxHealth;
     private int attack;
     private int defense;
     private int experience;
@@ -22,6 +23,12 @@ public abstract class Lutemon implements Serializable {
     private int losses;
     private int totalBattles;
 
+
+
+    private int totalTrainings;
+
+    public static int battleCounter = 0;
+    public static int trainingCounter = 0;
 
 
 
@@ -38,6 +45,7 @@ public abstract class Lutemon implements Serializable {
         this.imageResource = imageResource;
         this.imageResourceRight = imageResourceRight;
         this.imageResourceLeft = imageResourceLeft;
+        this.maxHealth = health;
 
 
 
@@ -62,12 +70,13 @@ public abstract class Lutemon implements Serializable {
     public void setTotalBattles(int totalBattles) {
         this.totalBattles = totalBattles;
     }
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
+
+
+    public int getTotalTrainings() { return totalTrainings; }
+
+    public void setTotalTrainings(int totalTrainings) {
+        this.totalTrainings = totalTrainings;
     }
-
-
-
 
     public String color(){
         return color;

@@ -37,14 +37,15 @@ public class TrainingActivity extends Activity {
         flashOverlay = findViewById(R.id.flashOverlay);
         LutemonTrainingName = findViewById(R.id.LutemonTrainingName);
         LutemontrainingInfo = findViewById(R.id.LutemontrainingInfo);
+        trainingCompleteText = findViewById(R.id.trainingCompleteText);
 
         ArrayList<Lutemon> trainingLutemon1 = LutemonStorage.selectedForTraining;
         Lutemon trainingLutemon = trainingLutemon1.get(0);
 
         LutemonTrainingName.setText(trainingLutemon.getName());
         LutemontrainingInfo.setText(trainingLutemon.toString());
-        imageView.setImageResource(trainingLutemon.getImageResource());
-        imageView3.setImageResource(trainingLutemon.getImageResource());
+        imageView.setImageResource(trainingLutemon.getImageResourceRight());
+        imageView3.setImageResource(trainingLutemon.getImageResourceRight());
 
         btnTrain.setOnClickListener(view -> {
             // Start the animation!
@@ -52,6 +53,8 @@ public class TrainingActivity extends Activity {
 
             // Also add experience to the Lutemon (if you want this part to be delayed, move it inside onAnimationEnd)
             trainingLutemon.setExperience(trainingLutemon.getExperience() + 2);
+            trainingLutemon.setTotalTrainings(trainingLutemon.getTotalTrainings() + 1);
+            Lutemon.trainingCounter++;
         });
 
 

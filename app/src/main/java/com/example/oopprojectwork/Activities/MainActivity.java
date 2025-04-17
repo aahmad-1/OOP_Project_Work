@@ -16,12 +16,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.oopprojectwork.AnimationManager;
+import com.example.oopprojectwork.LutemonStorage;
 import com.example.oopprojectwork.R;
 
 public class MainActivity extends AppCompatActivity {
 
 
 
+    TextView counter;
     ProgressBar trainingProgress;
     View flashOverlay;
 
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
     private void setupCurrentScreenNavigation() {
         // Check which layout is currently displayed and setup appropriate navigation
         if (findViewById(R.id.btnViewHome) != null) {
+            counter = findViewById(R.id.textLutemonsAtHomeCount);
+            counter.setText("You have " + LutemonStorage.allLutemons.size() + " lutemons at home");
             // We're on lutemon_battle screen
             setupBattleScreenNavigation();
         } else if (findViewById(R.id.btnMoveToTraining) != null) {

@@ -57,10 +57,9 @@ public class HomeActivity extends AppCompatActivity {
 
         });
         battleBtn.setOnClickListener(view -> {
-            ArrayList<Lutemon> selected = lutemonAdapter.getSelectedLutemons();
-            if (selected.size() == 2) {
+            LutemonStorage.selectedForBattle = lutemonAdapter.getSelectedLutemons();
+            if (LutemonStorage.selectedForBattle.size() == 2) {
                 Intent intent = new Intent(this, BattleActivity.class);
-                intent.putExtra("lutemons", selected);
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Select exactly two Lutemons for battle!", Toast.LENGTH_SHORT).show();

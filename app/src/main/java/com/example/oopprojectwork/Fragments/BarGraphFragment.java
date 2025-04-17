@@ -48,7 +48,7 @@ public class BarGraphFragment extends Fragment {
 
         // Initialize total wins for each color
         List<Lutemon> lutemons = LutemonStorage.allLutemons; // Replace with your actual data source
-        int redWins = 2, blackWins = 10, greenWins = 7, orangeWins = 4, pinkWins = 17;
+        int redWins = 0, blackWins = 0, greenWins = 0, orangeWins = 0, pinkWins = 0;
 
         for (Lutemon lutemon : lutemons) {
             switch (lutemon.color()) {
@@ -70,6 +70,12 @@ public class BarGraphFragment extends Fragment {
             }
         }
 
+        if (redWins == 0 && blackWins == 0 && greenWins == 0 && orangeWins == 0 && pinkWins == 0) {
+            bar.title("No battles have been fought yet.");
+        } else {
+            bar.title("Battles won by each Type(color) of Lutemon");
+        }
+
         // Prepare data for the bar graph
         List<DataEntry> data = new ArrayList<>();
         data.add(new CustomColorDataEntry("Red", redWins, "#FF0000")); // Red
@@ -82,7 +88,6 @@ public class BarGraphFragment extends Fragment {
         bar.data(data);
 
         // Configure bar chart appearance
-        bar.title("Battles won by each Type(color) of Lutemon");
         bar.yScale().minimum(0d);
         bar.tooltip()
                 .positionMode(TooltipPositionMode.POINT)

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.oopprojectwork.Activities.MainActivity;
 import com.example.oopprojectwork.AnimationManager;
 import com.example.oopprojectwork.Lutemon.Lutemon;
+import com.example.oopprojectwork.LutemonStorage;
 import com.example.oopprojectwork.R;
 
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class BattleActivity extends AppCompatActivity {
         lutemonPic1 = findViewById(R.id.imageView7);
         lutemonPic2 = findViewById(R.id.imageView8);
 
-        lutemonsBattle = (ArrayList<Lutemon>) getIntent().getSerializableExtra("lutemons");
+        lutemonsBattle = LutemonStorage.selectedForBattle;
         lutemon1 = lutemonsBattle.get(0);
         lutemon2 = lutemonsBattle.get(1);
 
@@ -92,26 +93,21 @@ public class BattleActivity extends AppCompatActivity {
                 defender = lutemon1;
             }
 
-            attacker.setExperience(12);
-            defender.setExperience(12);
 
             boolean defenderDodged = false;
-            if (defender.getExperience() > 10 && random.nextInt(5) == 1) {
+            if (defender.getExperience() > 5 && random.nextInt(5) == 1) {
                 defenderDodged = true;
                 appendBattleLog(defender.getName() + " DODGED the attack from " + attacker.getName() + "!");
             }
 
             if (!defenderDodged) {
-                if (attacker.getExperience() > 10 && random.nextInt(5) == 1) {
+                if (attacker.getExperience() > 5 && random.nextInt(5) == 1) {
                     performSpecialAttack(attacker, defender);
                 } else {
                     performNormalAttack(attacker, defender);
                 }
             }
-            // ⚔️ Calculate damage
-            int damage = Math.max(attacker.getAttack() - defender.getDefense(), 0);
-            int newHealth = Math.max(defender.getHealth() - damage, 0);
-            defender.setHealth(newHealth);
+
 
             // 🩹 Update health bar
             healthBar1.setProgress(lutemon1.getHealth());
@@ -121,15 +117,26 @@ public class BattleActivity extends AppCompatActivity {
             attackerInfo.setText(lutemon1.toString());
             defenderInfo.setText(lutemon2.toString());
 
-            battleLogs.append(attacker.getName() + " attacked " + defender.getName() + " for " + damage + " damage.\n");
+
 
             // 💀 Check if defender is defeated
             if (defender.getHealth() <= 0) {
                 appendBattleLog(defender.getName() + " has been defeated!");
 
                 attacker.setExperience(attacker.getExperience() + 1);
+                int newDExp = Math.max(defender.getExperience() - 2, 0);
+                defender.setExperience(newDExp);
+
                 attacker.setWins(attacker.getWins() + 1);
                 defender.setLosses(defender.getLosses() + 1);
+
+                attacker.setTotalBattles(attacker.getTotalBattles() + 1);
+                defender.setTotalBattles(defender.getTotalBattles() + 1);
+                Lutemon.battleCounter++;
+
+                // RESET HEALTHS
+                lutemon1.setHealth(lutemon1.getMaxHealth());
+                lutemon2.setHealth(lutemon2.getMaxHealth());
 
                 btnNextAttack.setEnabled(false);
                 btnNextAttack.setText("Battle Over");

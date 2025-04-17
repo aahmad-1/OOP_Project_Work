@@ -51,15 +51,11 @@ public class StatisticsFragment extends Fragment {
         TextView textView14 = view.findViewById(R.id.textView14);
 
         int totalLutemons = lutemonList.size();
-        int totalBattles = 0;
-        int totalTrainings = 0;
+        int totalBattles = Lutemon.battleCounter;
+        int totalTrainings = Lutemon.trainingCounter;
 
-        for (Lutemon lutemon : lutemonList) {
-            totalBattles += lutemon.getTotalBattles();
-             // Assuming experience represents training
-        }
 
-        textView14.setText("Total Lutemons: " + totalLutemons + "\nTotal Battles: " + totalBattles);
+        textView14.setText("Total Lutemons: " + totalLutemons + "\nTotal Battles: " + totalBattles + "\nTotal Trainings: " + totalTrainings);
     }
 
     private List<Lutemon> getLutemons() {

@@ -72,12 +72,9 @@ public class PieChartsFragment extends Fragment {
 
         // Check if all counters are zero
         if (redBattles == 0 && blackBattles == 0 && greenBattles == 0 && orangeBattles == 0 && pinkBattles == 0) {
-            // Set balanced values for the pie chart
-            redBattles = 1;
-            blackBattles = 1;
-            greenBattles = 1;
-            orangeBattles = 1;
-            pinkBattles = 1;
+            pie.title(" No battles fought yet");
+        } else {
+            pie.title("Battles fought by Type(color) of Lutemon");
         }
 
         // Prepare data for the pie chart
@@ -88,8 +85,7 @@ public class PieChartsFragment extends Fragment {
         data.add(new ValueDataEntry("Orange", orangeBattles));
         data.add(new ValueDataEntry("Pink", pinkBattles));
 
-        // Set chart title
-        pie.title("Battles fought by each Type(color) of Lutemon");
+
 
         // Set data to the pie chart
         pie.data(data);
