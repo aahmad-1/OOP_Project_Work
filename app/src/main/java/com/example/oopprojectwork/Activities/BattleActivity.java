@@ -1,4 +1,4 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -68,8 +68,8 @@ public class BattleActivity extends AppCompatActivity {
         name2.setText(lutemon2.getName());
         attackerInfo.setText(lutemon1.toString());
         defenderInfo.setText(lutemon2.toString());
-        lutemonPic1.setImageResource(lutemon1.getImageResource());
-        lutemonPic2.setImageResource(lutemon2.getImageResource());
+        lutemonPic1.setImageResource(lutemon1.getImageResourceRight());
+        lutemonPic2.setImageResource(lutemon2.getImageResourceLeft());
 
         healthBar1.setMax(lutemon1.getHealth());
         healthBar1.setProgress(lutemon1.getHealth());

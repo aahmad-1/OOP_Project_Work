@@ -3,7 +3,7 @@ import com.example.oopprojectwork.R;
 
 public class Red extends Lutemon {
     public Red(String name) {
-        super(name, 5, 4, 20, "red", R.drawable.scizer_facing_right);
+        super(name, 5, 4, 20, "red", R.drawable.scizer_facing_right, R.drawable.scizer_facing_left);
     }
 
     @Override

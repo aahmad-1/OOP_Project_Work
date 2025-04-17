@@ -36,7 +36,7 @@ public class LutemonStatsAdapter extends RecyclerView.Adapter<LutemonStatsAdapte
         Lutemon lutemon = lutemonList.get(position);
         holder.lutemonName.setText(lutemon.getName());
         holder.lutemonStats.setText("Battles : " + lutemon.getTotalBattles() + ",\n Wins : " + lutemon.getWins());
-        holder.lutemonImage.setImageResource(lutemon.getImageResource());
+        holder.lutemonImage.setImageResource(lutemon.getImageResourceRight());
     }
 
     @Override

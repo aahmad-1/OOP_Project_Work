@@ -41,7 +41,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
         holder.lutemonDetails.setText("ATK: " + lutemon.getAttack() + "\nDEF: " + lutemon.getDefense() + "\nHP: " + lutemon.getHealth());
 
         // Set the image based on Lutemon type
-        holder.lutemonImage.setImageResource(lutemon.getImageResource());
+        holder.lutemonImage.setImageResource(lutemon.getImageResourceRight());
 
         holder.checkBox.setOnCheckedChangeListener(null);
         holder.checkBox.setChecked(selectedLutemons.contains(lutemon));

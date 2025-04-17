@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.oopprojectwork.BattleActivity;
 import com.example.oopprojectwork.Lutemon.Lutemon;
 import com.example.oopprojectwork.Lutemon.Red;
 import com.example.oopprojectwork.Lutemon.Green;
