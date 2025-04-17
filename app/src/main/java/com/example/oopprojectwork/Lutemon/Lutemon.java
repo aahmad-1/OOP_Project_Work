@@ -43,6 +43,7 @@ public abstract class Lutemon implements Serializable {
 
     }
 
+    //commit
     public int getImageResourceRight() {
         return imageResourceRight;
     }
