@@ -2,8 +2,8 @@ package com.example.oopprojectwork;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import java.util.Random;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -37,7 +37,6 @@ public class BattleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.battle_arena);
-
 
         leftSword = findViewById(R.id.imageView4);
         rightSword = findViewById(R.id.imageView5);
@@ -73,6 +72,8 @@ public class BattleActivity extends AppCompatActivity {
         healthBar2.setMax(lutemon2.getHealth());
         healthBar2.setProgress(lutemon2.getHealth());
 
+        // Create random
+        Random random = new Random();
 
         btnNextAttack.setOnClickListener(view -> {
             Lutemon attacker;
@@ -86,10 +87,24 @@ public class BattleActivity extends AppCompatActivity {
                 defender = lutemon1;
             }
 
-            // ⚔️ Calculate damage
-            int damage = Math.max(attacker.getAttack() - defender.getDefense(), 0);
-            int newHealth = Math.max(defender.getHealth() - damage, 0);
-            defender.setHealth(newHealth);
+            attacker.setExperience(12);
+            defender.setExperience(12);
+
+            // 🛡️ Defender's Dodge Chance (before taking damage from attacker)
+            boolean defenderDodged = false;
+            if (defender.getExperience() > 10 && random.nextInt(5) == 1) { // 20% chance to dodge
+                defenderDodged = true;
+                battleLogs.append(defender.getName() + " DODGED the attack from " + attacker.getName() + "!\n");
+            }
+
+            // 🗡️ Attacker's Turn
+            if (!defenderDodged) {
+                if (attacker.getExperience() > 10 && random.nextInt(5) == 1) { // 20% chance for special attack
+                    performSpecialAttack(attacker, defender);
+                } else {
+                    performNormalAttack(attacker, defender);
+                }
+            }
 
             // 🩹 Update health bar
             healthBar1.setProgress(lutemon1.getHealth());
@@ -98,8 +113,6 @@ public class BattleActivity extends AppCompatActivity {
             // 📝 Update UI
             attackerInfo.setText(lutemon1.toString());
             defenderInfo.setText(lutemon2.toString());
-
-            battleLogs.append(attacker.getName() + " attacked " + defender.getName() + " for " + damage + " damage.\n");
 
             // 💀 Check if defender is defeated
             if (defender.getHealth() <= 0) {
@@ -116,12 +129,27 @@ public class BattleActivity extends AppCompatActivity {
                 isLutemon1Turn = !isLutemon1Turn;
             }
             AnimationManager.playSwordClashAnimation(BattleActivity.this, leftSword, rightSword);
-
         });
 
         btnLutemonHome.setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
+    }
+
+    // Helper method for normal attack
+    private void performNormalAttack(Lutemon attacker, Lutemon defender) {
+        int damage = Math.max(attacker.getAttack() - defender.getDefense(), 0);
+        int newHealth = Math.max(defender.getHealth() - damage, 0);
+        defender.setHealth(newHealth);
+        battleLogs.append(attacker.getName() + " attacked " + defender.getName() + " for " + damage + " damage.\n");
+    }
+
+    // Helper method for special attack
+    private void performSpecialAttack(Lutemon attacker, Lutemon defender) {
+        int specialDamage = Math.max(attacker.getAttack() * 2 - defender.getDefense(), 0);
+        int newHealth = Math.max(defender.getHealth() - specialDamage, 0);
+        defender.setHealth(newHealth);
+        battleLogs.append(attacker.getName() + " used a SPECIAL ATTACK on " + defender.getName() + " for " + specialDamage + " damage.\n");
     }
 }
