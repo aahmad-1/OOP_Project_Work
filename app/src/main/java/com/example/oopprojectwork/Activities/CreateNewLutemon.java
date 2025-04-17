@@ -1,4 +1,4 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +10,15 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.oopprojectwork.Lutemon.Black;
 import com.example.oopprojectwork.Lutemon.Green;
 import com.example.oopprojectwork.Lutemon.Lutemon;
 import com.example.oopprojectwork.Lutemon.Orange;
 import com.example.oopprojectwork.Lutemon.Pink;
 import com.example.oopprojectwork.Lutemon.Red;
+import com.example.oopprojectwork.LutemonStorage;
+import com.example.oopprojectwork.R;
 
 public class CreateNewLutemon extends AppCompatActivity {
 

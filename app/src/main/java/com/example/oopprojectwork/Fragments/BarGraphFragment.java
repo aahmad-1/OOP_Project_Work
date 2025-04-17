@@ -1,4 +1,4 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +17,8 @@ import com.anychart.enums.HoverMode;
 import com.anychart.enums.Position;
 import com.anychart.enums.TooltipPositionMode;
 import com.example.oopprojectwork.Lutemon.Lutemon;
+import com.example.oopprojectwork.LutemonStorage;
+import com.example.oopprojectwork.R;
 
 import java.util.ArrayList;
 import java.util.List;

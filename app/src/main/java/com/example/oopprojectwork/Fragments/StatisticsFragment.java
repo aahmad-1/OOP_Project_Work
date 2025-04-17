@@ -1,4 +1,4 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oopprojectwork.Lutemon.Lutemon;
+import com.example.oopprojectwork.LutemonStatsAdapter;
+import com.example.oopprojectwork.LutemonStorage;
+import com.example.oopprojectwork.R;
 
 import java.util.List;
 

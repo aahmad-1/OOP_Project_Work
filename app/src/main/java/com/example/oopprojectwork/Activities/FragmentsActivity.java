@@ -1,10 +1,15 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.oopprojectwork.Fragments.BarGraphFragment;
+import com.example.oopprojectwork.Fragments.PieChartsFragment;
+import com.example.oopprojectwork.R;
+import com.example.oopprojectwork.Fragments.StatisticsFragment;
 
 public class FragmentsActivity extends AppCompatActivity {
 

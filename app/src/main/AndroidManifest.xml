@@ -15,7 +15,7 @@
 
         <!-- Launcher Activity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,10 +24,11 @@
         </activity>
 
         <!-- Other Activities -->
-        <activity android:name=".HomeActivity" android:exported="true" />
-        <activity android:name=".CreateNewLutemon" android:exported="true" />
-        <activity android:name=".FragmentsActivity" android:exported="true" />
-        <activity android:name=".BattleActivity" android:exported="true" />
+        <activity android:name=".Activities.HomeActivity" android:exported="true" />
+        <activity android:name=".Activities.CreateNewLutemon" android:exported="true" />
+        <activity android:name=".Activities.FragmentsActivity" android:exported="true" />
+        <activity android:name=".Activities.BattleActivity" android:exported="true" />
+        <activity android:name=".Activities.TrainingActivity" android:exported="true" />
 
     </application>
 

@@ -1,4 +1,4 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,8 @@ import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
 import com.example.oopprojectwork.Lutemon.Lutemon;
+import com.example.oopprojectwork.LutemonStorage;
+import com.example.oopprojectwork.R;
 
 import java.util.ArrayList;
 import java.util.List;

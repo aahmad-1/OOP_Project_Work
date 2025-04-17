@@ -11,7 +11,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.oopprojectwork.AnimationManager;
 import com.example.oopprojectwork.Lutemon.Lutemon;
+import com.example.oopprojectwork.R;
 
 import java.util.ArrayList;
 
@@ -38,6 +40,7 @@ public class BattleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.battle_arena);
+
 
         leftSword = findViewById(R.id.imageView4);
         rightSword = findViewById(R.id.imageView5);
@@ -104,13 +107,22 @@ public class BattleActivity extends AppCompatActivity {
                     performNormalAttack(attacker, defender);
                 }
             }
+            // ⚔️ Calculate damage
+            int damage = Math.max(attacker.getAttack() - defender.getDefense(), 0);
+            int newHealth = Math.max(defender.getHealth() - damage, 0);
+            defender.setHealth(newHealth);
 
+            // 🩹 Update health bar
             healthBar1.setProgress(lutemon1.getHealth());
             healthBar2.setProgress(lutemon2.getHealth());
 
+            // 📝 Update UI
             attackerInfo.setText(lutemon1.toString());
             defenderInfo.setText(lutemon2.toString());
 
+            battleLogs.append(attacker.getName() + " attacked " + defender.getName() + " for " + damage + " damage.\n");
+
+            // 💀 Check if defender is defeated
             if (defender.getHealth() <= 0) {
                 appendBattleLog(defender.getName() + " has been defeated!");
 
@@ -121,10 +133,12 @@ public class BattleActivity extends AppCompatActivity {
                 btnNextAttack.setEnabled(false);
                 btnNextAttack.setText("Battle Over");
             } else {
+                // 🔁 Switch turn
                 isLutemon1Turn = !isLutemon1Turn;
             }
 
             AnimationManager.playSwordClashAnimation(BattleActivity.this, leftSword, rightSword);
+
         });
 
         btnLutemonHome.setOnClickListener(view -> {

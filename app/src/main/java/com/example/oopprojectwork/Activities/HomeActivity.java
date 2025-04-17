@@ -1,4 +1,4 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,12 +9,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.oopprojectwork.BattleActivity;
 import com.example.oopprojectwork.Lutemon.Lutemon;
 import com.example.oopprojectwork.Lutemon.Red;
 import com.example.oopprojectwork.Lutemon.Green;
 import com.example.oopprojectwork.Lutemon.Pink;
 import com.example.oopprojectwork.Lutemon.Orange;
 import com.example.oopprojectwork.Lutemon.Black;
+import com.example.oopprojectwork.LutemonAdapter;
+import com.example.oopprojectwork.LutemonStorage;
+import com.example.oopprojectwork.R;
 
 
 import java.util.ArrayList;
@@ -50,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         trainingBtn.setOnClickListener(v -> {
             LutemonStorage.selectedForTraining = lutemonAdapter.getSelectedLutemons();
             if (LutemonStorage.selectedForTraining.size() == 1) {
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this,TrainingActivity.class);
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Select at least one Lutemon!", Toast.LENGTH_SHORT).show();

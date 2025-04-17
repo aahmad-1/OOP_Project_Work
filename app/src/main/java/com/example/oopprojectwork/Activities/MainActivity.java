@@ -1,4 +1,4 @@
-package com.example.oopprojectwork;
+package com.example.oopprojectwork.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.oopprojectwork.AnimationManager;
+import com.example.oopprojectwork.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,12 +72,9 @@ public class MainActivity extends AppCompatActivity {
     private void setupBattleScreenNavigation() {
         // Button from lutemon_battle to lutemon_home
         Button btnViewHome = findViewById(R.id.btnViewHome);
-        btnViewHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
+        btnViewHome.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(intent);
         });
 
         // Button from lutemon_battle to statistics
@@ -87,12 +87,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Button from lutemon_battle to create_new_lutemon
         Button btnCreateNew = findViewById(R.id.btnCreateNewLutemon);
-        btnCreateNew.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CreateNewLutemon.class);
-                startActivity(intent);
-            }
+        btnCreateNew.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CreateNewLutemon.class);
+            startActivity(intent);
         });
     }
 
@@ -126,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Train button (add your training logic here)
         Button btnTrain = findViewById(R.id.btnTrain);
-        TextView trainingCompleteText = findViewById(R.id.textView10);
+        TextView trainingCompleteText = findViewById(R.id.trainingCompleteText);
         btnTrain.setOnClickListener(v -> {
             // Add training functionality here
             AnimationManager.startTrainingAnimation(trainingProgress, flashOverlay,trainingCompleteText);
