@@ -6,8 +6,6 @@
     android:layout_height="match_parent">
 
     <!-- Header -->
-
-    <!-- Movable CardView -->
     <LinearLayout
         android:id="@+id/HeaderLayout"
         android:layout_width="match_parent"
@@ -40,7 +38,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/HeaderLayout">
 
-        <!-- Inner ConstraintLayout for image positioning -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -87,33 +84,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-
-
-
-    <Button
-        android:id="@+id/btnTrain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginBottom="48dp"
-        android:text="Train"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnGoToHome"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnGoToHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginEnd="81dp"
-        android:layout_marginBottom="48dp"
-        android:text="Go to Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnTrain" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="117dp"
@@ -143,7 +113,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-
     <View
         android:id="@+id/flashOverlay"
         android:layout_width="281dp"
@@ -156,21 +125,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"/>
 
+    <!-- Updated training completion text -->
     <TextView
         android:id="@+id/trainingCompleteText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="424dp"
         android:text="LUTEMON TRAINING COMPLETED!! +2 EXP"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintBottom_toTopOf="@+id/btnTrain"
+        android:layout_marginTop="120dp"/>
+
+    <Button
+        android:id="@+id/btnTrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="48dp"
+        android:text="Train"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnGoToHome"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnGoToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="48dp"
+        android:text="Go to Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnTrain" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

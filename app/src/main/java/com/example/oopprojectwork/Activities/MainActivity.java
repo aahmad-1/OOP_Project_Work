@@ -3,9 +3,7 @@ package com.example.oopprojectwork.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-
 import android.widget.ProgressBar;
-
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,8 +18,6 @@ import com.example.oopprojectwork.LutemonStorage;
 import com.example.oopprojectwork.R;
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     TextView counter;
     ProgressBar trainingProgress;
@@ -39,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setupCurrentScreenNavigation();
-
     }
 
     @Override
@@ -70,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             // We're on statistics screen
             setupStatisticsScreenNavigation();
         }
-        // Add more conditions if you have other screens
     }
 
     private void setupBattleScreenNavigation() {
@@ -88,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
         // Button from lutemon_battle to create_new_lutemon
         Button btnCreateNew = findViewById(R.id.btnCreateNewLutemon);
         btnCreateNew.setOnClickListener(v -> {
@@ -102,8 +95,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnMoveToTraining = findViewById(R.id.btnMoveToTraining);
         btnMoveToTraining.setOnClickListener(v -> {
             setContentView(R.layout.training_area_lutemon);
-
-            trainingProgress = findViewById(R.id.progressBar);  // ProgressBar from XML
+            trainingProgress = findViewById(R.id.progressBar);
             flashOverlay = findViewById(R.id.flashOverlay);
         });
 
@@ -114,8 +106,6 @@ public class MainActivity extends AppCompatActivity {
         Button btnMoveToBattle = findViewById(R.id.btnMoveToBattle);
         btnMoveToBattle.setOnClickListener(v -> {
             setContentView(R.layout.battle_arena);
-            // Initialize sword ImageViews immediately after setting the battle arena content
-
             setupBattleLutemonNavigation();
         });
     }
@@ -125,17 +115,19 @@ public class MainActivity extends AppCompatActivity {
         Button btnGoHome = findViewById(R.id.btnGoToHome);
         btnGoHome.setOnClickListener(v -> setContentView(R.layout.lutemon_home));
 
-        // Train button (add your training logic here)
+        // Train button
         Button btnTrain = findViewById(R.id.btnTrain);
         TextView trainingCompleteText = findViewById(R.id.trainingCompleteText);
         btnTrain.setOnClickListener(v -> {
-            // Add training functionality here
-            AnimationManager.startTrainingAnimation(trainingProgress, flashOverlay,trainingCompleteText);
+            // Updated to include a Runnable parameter
+            AnimationManager.startTrainingAnimation(trainingProgress, flashOverlay, trainingCompleteText, () -> {
+                // This is the callback that runs when animation completes
+                // You can add any post-animation logic here if needed
+            });
         });
     }
 
     private void setupBattleLutemonNavigation() {
-
         // Button from battle_lutemon to go to home
         Button btnGoHome = findViewById(R.id.btnLutemonHome);
         btnGoHome.setOnClickListener(v -> setContentView(R.layout.lutemon_home));
@@ -143,20 +135,22 @@ public class MainActivity extends AppCompatActivity {
         // Next Attack button
         Button btnNextAttack = findViewById(R.id.btnNextAttack);
         btnNextAttack.setOnClickListener(v -> {
-
+            // Add battle functionality here
         });
     }
+
     private void setupCreateLutemonNavigation() {
         // Button from create_new_lutemon to go back to lutemon_battle
         Button btnCancel = findViewById(R.id.btnCancel);
         btnCancel.setOnClickListener(v -> setContentView(R.layout.lutemon_menu));
 
-        // Create button (add your create logic here)
+        // Create button
         Button btnCreate = findViewById(R.id.btnCreate);
         btnCreate.setOnClickListener(v -> {
             // Add create functionality here
         });
     }
+
     private void setupStatisticsScreenNavigation() {
         // Button from statistics to go back to menu
         Button btnGoToMenu = findViewById(R.id.btnGoToMenu);

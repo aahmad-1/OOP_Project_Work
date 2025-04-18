@@ -1,6 +1,5 @@
 package com.example.oopprojectwork;
 
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
@@ -8,11 +7,9 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.view.View;
-
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-
 import android.view.animation.AnimationUtils;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ProgressBar;
@@ -65,7 +62,8 @@ public class AnimationManager {
         }, leftAnim.getDuration() + 200); // Add 200ms delay after the first animation
     }
 
-    public static void startTrainingAnimation(final ProgressBar progressBar, final View flashOverlay, final TextView completionText) {
+    public static void startTrainingAnimation(final ProgressBar progressBar, final View flashOverlay,
+                                              final TextView completionText, Runnable onComplete) {
         if (progressBar.getVisibility() == View.VISIBLE) return;
 
         progressBar.setProgress(0);
@@ -91,7 +89,7 @@ public class AnimationManager {
                 progressBar.setVisibility(View.GONE);
                 flashOverlay.setVisibility(View.GONE);
 
-                // 🎉 Celebration animation for the text
+                // Celebration animation for the text
                 completionText.setScaleX(0f);
                 completionText.setScaleY(0f);
                 completionText.setAlpha(0f);
@@ -105,17 +103,15 @@ public class AnimationManager {
                         .setInterpolator(new OvershootInterpolator())
                         .start();
 
+                // Execute the completion callback
+                if (onComplete != null) {
+                    onComplete.run();
+                }
+
                 // Optional: Hide the text after 3 seconds
                 new Handler().postDelayed(() -> completionText.setVisibility(View.GONE), 3000);
             }
         });
         animator.start();
     }
-
-
-
-
-
-
-
 }

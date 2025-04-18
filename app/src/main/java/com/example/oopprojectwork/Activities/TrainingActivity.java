@@ -19,10 +19,11 @@ import java.util.ArrayList;
 public class TrainingActivity extends Activity {
     Button btnTrain;
     Button btnGoToHome;
-    ImageView imageView,imageView3;
+    ImageView imageView, imageView3;
     ProgressBar progressBar;
     View flashOverlay;
     TextView LutemonTrainingName, LutemontrainingInfo, trainingCompleteText;
+    Lutemon trainingLutemon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,37 +34,40 @@ public class TrainingActivity extends Activity {
         btnGoToHome = findViewById(R.id.btnGoToHome);
         imageView3 = findViewById(R.id.imageView3);
         imageView = findViewById(R.id.imageView);
-        progressBar= findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar);
         flashOverlay = findViewById(R.id.flashOverlay);
         LutemonTrainingName = findViewById(R.id.LutemonTrainingName);
         LutemontrainingInfo = findViewById(R.id.LutemontrainingInfo);
         trainingCompleteText = findViewById(R.id.trainingCompleteText);
 
         ArrayList<Lutemon> trainingLutemon1 = LutemonStorage.selectedForTraining;
-        Lutemon trainingLutemon = trainingLutemon1.get(0);
+        trainingLutemon = trainingLutemon1.get(0);
 
-        LutemonTrainingName.setText(trainingLutemon.getName());
-        LutemontrainingInfo.setText(trainingLutemon.toString());
-        imageView.setImageResource(trainingLutemon.getImageResourceRight());
-        imageView3.setImageResource(trainingLutemon.getImageResourceRight());
+        updateLutemonInfo();
 
         btnTrain.setOnClickListener(view -> {
-            // Start the animation!
-            AnimationManager.startTrainingAnimation(progressBar, flashOverlay, trainingCompleteText);
-
-            // Also add experience to the Lutemon (if you want this part to be delayed, move it inside onAnimationEnd)
-            trainingLutemon.setExperience(trainingLutemon.getExperience() + 2);
-            trainingLutemon.setTotalTrainings(trainingLutemon.getTotalTrainings() + 1);
-            Lutemon.trainingCounter++;
+            AnimationManager.startTrainingAnimation(progressBar, flashOverlay, trainingCompleteText, () -> {
+                // This runs when animation completes
+                trainingLutemon.setExperience(trainingLutemon.getExperience() + 2);
+                trainingLutemon.setTotalTrainings(trainingLutemon.getTotalTrainings() + 1);
+                Lutemon.trainingCounter++;
+                updateLutemonInfo();
+            });
         });
 
-
-        btnGoToHome.setOnClickListener(view ->{
+        btnGoToHome.setOnClickListener(view -> {
             Intent intent = new Intent(TrainingActivity.this, HomeActivity.class);
             startActivity(intent);
         });
+    }
 
-
-
+    private void updateLutemonInfo() {
+        LutemonTrainingName.setText(trainingLutemon.getName());
+        LutemontrainingInfo.setText("ATK: " + trainingLutemon.getAttack() + ",\n" +
+                "DEF: " + trainingLutemon.getDefense() + ",\n" +
+                "HP: " + trainingLutemon.getHealth() + ",\n" +
+                "EXP: " + trainingLutemon.getExperience());
+        imageView.setImageResource(trainingLutemon.getImageResourceRight());
+        imageView3.setImageResource(trainingLutemon.getImageResourceRight());
     }
 }
