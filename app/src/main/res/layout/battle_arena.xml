@@ -60,12 +60,12 @@
         android:id="@+id/scrollView"
         android:layout_width="411dp"
         android:layout_height="160dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="175dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnNextAttack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <TextView
             android:id="@+id/battleLogs"
@@ -79,21 +79,21 @@
         android:id="@+id/btnNextAttack"
         android:layout_width="309dp"
         android:layout_height="51dp"
-        android:layout_marginBottom="95dp"
+        android:layout_marginTop="80dp"
         android:text="Next Attack"
-        app:layout_constraintBottom_toTopOf="@+id/btnLutemonHome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 
     <Button
         android:id="@+id/btnLutemonHome"
         android:layout_width="158dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="50dp"
         android:text="Lutemon Home"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNextAttack" />
 
     <TextView
         android:id="@+id/textView3"

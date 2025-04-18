@@ -139,6 +139,9 @@ public class BattleActivity extends AppCompatActivity {
                 lutemon1.setHealth(lutemon1.getMaxHealth());
                 lutemon2.setHealth(lutemon2.getMaxHealth());
 
+                LutemonStorage.saveToFile(this);
+
+
                 btnNextAttack.setEnabled(false);
                 btnNextAttack.setText("Battle Over");
             } else {

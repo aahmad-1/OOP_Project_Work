@@ -9,9 +9,7 @@
         android:id="@+id/textView7"
         android:layout_width="411dp"
         android:layout_height="84dp"
-        android:layout_marginStart="1dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="1dp"
         android:layout_marginBottom="44dp"
         android:background="@android:drawable/dialog_holo_dark_frame"
         android:text="Lutemon Home"
@@ -21,7 +19,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +27,6 @@
         android:layout_width="407dp"
         android:layout_height="595dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -39,40 +35,48 @@
         android:layout_width="122dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="100dp"
         android:text="Move to Training"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnMoveToMenu"
+        app:layout_constraintEnd_toStartOf="@+id/button69"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnMoveToMenu"
         android:layout_width="134dp"
         android:layout_height="54dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         android:text="Menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnMoveToBattle"
+        app:layout_constraintBottom_toTopOf="@+id/button69"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@+id/btnMoveToTraining"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnMoveToBattle"
         android:layout_width="130dp"
         android:layout_height="52dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="5dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="100dp"
         android:text="Move to Battle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@+id/btnMoveToMenu"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintStart_toEndOf="@+id/button69" />
+
+    <Button
+        android:id="@+id/button69"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="100dp"
+        android:text="Delete Lutemon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnMoveToBattle"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toEndOf="@+id/btnMoveToTraining" />
 </androidx.constraintlayout.widget.ConstraintLayout>

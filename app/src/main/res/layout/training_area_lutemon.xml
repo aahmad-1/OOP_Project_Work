@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Activities.TrainingActivity">
+
 
     <!-- Header -->
     <LinearLayout
@@ -16,7 +19,6 @@
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -29,140 +31,142 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- CardView for Lutemon Info -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/HeaderLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/HeaderLayout">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="112dp"
-                android:layout_height="119dp"
-                android:scaleType="fitCenter"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.063"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/LutemonTrainingName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="59dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="133dp"
-                android:text="Lutemon name"
-                android:textSize="16sp"
+                android:layout_width="231dp"
+                android:layout_height="25dp"
+                android:text="Lutemon Name"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.72"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@id/imageView3"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Lutemon Name" />
 
             <TextView
                 android:id="@+id/LutemontrainingInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="80dp"
-                android:text="Lutemon information"
-                android:textSize="16sp"
+                android:layout_width="229dp"
+                android:layout_height="100dp"
+                android:text="Lutemon Info"
+                android:textSize="14sp"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/LutemonTrainingName" />
-
+                app:layout_constraintStart_toEndOf="@id/imageView3"
+                app:layout_constraintTop_toBottomOf="@id/LutemonTrainingName"
+                tools:text="HP: 100, EXP: 50" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Overlapping Image -->
+
+    <!-- Progress Bar -->
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="117dp"
-        android:layout_height="116dp"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="147dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="150dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
         app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <!-- Flash Overlay -->
+
+    <!-- Training Complete Text -->
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleLarge"
-        android:layout_width="281dp"
-        android:layout_height="291dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="65dp"
+        android:layout_width="172dp"
+        android:layout_height="178dp"
+        android:layout_marginTop="116dp"
         android:indeterminate="true"
-        android:indeterminateTint="@android:color/holo_blue_light"
+        android:indeterminateTint="@color/cyan_500"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
+
     <View
         android:id="@+id/flashOverlay"
-        android:layout_width="281dp"
-        android:layout_height="291dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="26dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="150dp"
         android:background="@drawable/glow_circle"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"/>
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-    <!-- Updated training completion text -->
+    <!-- Buttons -->
+
     <TextView
         android:id="@+id/trainingCompleteText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LUTEMON TRAINING COMPLETED!! +2 EXP"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        android:layout_marginBottom="12dp"
+        android:text="Training Completed! +2 EXP"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar"
-        app:layout_constraintBottom_toTopOf="@+id/btnTrain"
-        android:layout_marginTop="120dp"/>
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        tools:text="Training Completed! +2 EXP" />
 
     <Button
         android:id="@+id/btnTrain"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="110dp"
         android:text="Train"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnGoToHome"
+        app:layout_constraintEnd_toStartOf="@id/btnGoToHome"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnGoToHome"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginEnd="81dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="110dp"
         android:text="Go to Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnTrain" />
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/btnTrain" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

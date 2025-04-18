@@ -46,17 +46,18 @@ public class TrainingActivity extends Activity {
         updateLutemonInfo();
 
         btnTrain.setOnClickListener(view -> {
-            // Start the animation!
-            Runnable Runnable = null;
-            AnimationManager.startTrainingAnimation(progressBar, flashOverlay, trainingCompleteText,Runnable);
+            AnimationManager.startTrainingAnimation(progressBar, flashOverlay, trainingCompleteText, () -> {
+                // Update experience and training stats after the animation ends
+                trainingLutemon.setExperience(trainingLutemon.getExperience() + 2);
+                trainingLutemon.setTotalTrainings(trainingLutemon.getTotalTrainings() + 1);
+                Lutemon.trainingCounter++;
 
-            // Also add experience to the Lutemon (if you want this part to be delayed, move it inside onAnimationEnd)
-            trainingLutemon.setExperience(trainingLutemon.getExperience() + 2);
-            trainingLutemon.setTotalTrainings(trainingLutemon.getTotalTrainings() + 1);
-            Lutemon.trainingCounter++;
-            LutemonStorage.saveToFile(this);
-            updateLutemonInfo();
+                // Save the updated data
+                LutemonStorage.saveToFile(this);
 
+                // Update the UI with the new Lutemon info
+                updateLutemonInfo();
+            });
         });
 
         btnGoToHome.setOnClickListener(view -> {

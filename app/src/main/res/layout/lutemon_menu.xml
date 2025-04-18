@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,8 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="16dp"
-            android:layout_marginBottom="24dp"
+            android:padding="20dp"
+            android:layout_marginBottom="32dp"
             android:background="@android:drawable/dialog_holo_dark_frame">
 
             <TextView
@@ -27,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="LUTEMON BATTLE"
                 android:textColor="@android:color/white"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -35,15 +34,15 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/textLutemonsAtHomeTitle"
@@ -51,22 +50,23 @@
                     android:layout_height="wrap_content"
                     android:text="Lutemons at Home"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textLutemonsAtHomeCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="12dp"
                     android:text="You have x Lutemons at home"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/btnViewHome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:background="@android:drawable/btn_default"
                     android:backgroundTint="#6A0DAD"
                     android:text="View Home"
@@ -80,15 +80,15 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/textStatisticsiTitle"
@@ -96,14 +96,14 @@
                     android:layout_height="wrap_content"
                     android:text="Statistics"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/btnViewStatistics"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:background="@android:drawable/btn_default"
                     android:backgroundTint="#6A0DAD"
                     android:text="View Statistics"
@@ -117,56 +117,56 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal"
             android:gravity="center"
             android:weightSum="2">
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="170dp"
+                android:layout_height="180dp"
                 android:layout_weight="1"
-                android:padding="5dp"
+                android:padding="8dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/charmander_menu_screen" />
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="170dp"
+                android:layout_height="180dp"
                 android:layout_weight="1"
-                android:src="@drawable/pikachu_menu_screen"
+                android:padding="8dp"
                 android:scaleType="fitCenter"
-                android:padding="5dp"/>
+                android:src="@drawable/pikachu_menu_screen" />
         </LinearLayout>
 
         <!-- Spacer to push content down -->
         <View
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"/>
+            android:layout_height="50dp" />
 
-        <!-- Create New Lutemon Button blah blah-->
+        <!-- Create New Lutemon Button -->
         <Button
             android:id="@+id/btnCreateNewLutemon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:background="@android:drawable/btn_default"
             android:backgroundTint="#A5D6A7"
             android:text="Create new Lutemon"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/home_screen_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="20dp"
             android:text="Home Screen"
             android:textColor="@android:color/darker_gray"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 </ScrollView>

@@ -6,14 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".Activities.CreateNewLutemonActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header with black curved box (same as main screen) -->
+        <!-- Header with black curved box -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,14 +37,13 @@
             android:id="@+id/editLutemonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="24dp"
             android:hint="Lutemon Name"
             android:textColorHint="@android:color/darker_gray"
             android:background="@android:drawable/editbox_background"
             android:padding="12dp"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <!-- Select Color Title -->
         <TextView
@@ -54,7 +54,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginBottom="16dp"
-            android:paddingLeft="24dp"/>
+            android:paddingStart="16dp" />
 
         <!-- Color Options -->
         <RadioGroup
@@ -63,13 +63,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:orientation="vertical"
-            android:paddingLeft="16dp">
+            android:paddingStart="16dp">
 
             <RadioButton
                 android:id="@+id/radioRed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Red (ATK: 5, DEF: 4, HP: 20)"
                 android:textColor="@android:color/black" />
@@ -78,36 +77,32 @@
                 android:id="@+id/radioGreen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Green (ATK: 6, DEF: 3, HP: 19)"
-                android:textColor="@android:color/black"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"/>
+                android:text="Green (ATK: 6, DEF: 3, HP: 19)"
+                android:textColor="@android:color/black" />
 
             <RadioButton
                 android:id="@+id/radioPink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pink (ATK: 7, DEF: 2, HP: 18)"
-                android:textColor="@android:color/black"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"/>
+                android:text="Pink (ATK: 7, DEF: 2, HP: 18)"
+                android:textColor="@android:color/black" />
 
             <RadioButton
                 android:id="@+id/radioOrange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Orange (ATK: 8, DEF: 1, HP: 17)"
-                android:textColor="@android:color/black"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"/>
+                android:text="Orange (ATK: 8, DEF: 1, HP: 17)"
+                android:textColor="@android:color/black" />
 
             <RadioButton
                 android:id="@+id/radioBlack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Black (ATK: 0, DEF: 0, HP: 16)"
-                android:textColor="@android:color/black"
-                android:layout_marginLeft="8dp"/>
+                android:textColor="@android:color/black" />
         </RadioGroup>
 
         <!-- Selected Lutemon Preview -->
@@ -121,8 +116,8 @@
 
             <ImageView
                 android:id="@+id/lutemonPreview"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:contentDescription="Lutemon preview image"
                 android:scaleType="fitCenter" />
         </LinearLayout>
@@ -132,8 +127,7 @@
             android:id="@+id/btnCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="16dp"
             android:background="@android:drawable/btn_default"
             android:backgroundTint="#6A0DAD"
@@ -147,8 +141,7 @@
             android:id="@+id/btnCancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginHorizontal="16dp"
             android:background="@android:drawable/btn_default"
             android:backgroundTint="#6A0DAD"
             android:text="Cancel"
@@ -156,13 +149,13 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
-        <!-- Small gray text at bottom :)-->
+        <!-- Small gray text at bottom -->
         <TextView
             android:id="@+id/create_lutemon_screen_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:layout_marginLeft="8dp"
+            android:paddingStart="8dp"
             android:text="Create Lutemon Screen"
             android:textColor="@android:color/darker_gray"
             android:textSize="12sp" />

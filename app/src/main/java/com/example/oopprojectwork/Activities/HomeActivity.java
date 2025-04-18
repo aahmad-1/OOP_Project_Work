@@ -28,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     Button trainingBtn;
     Button battleBtn;
     Button menuBtn;
+    Button deletebtn;
     LutemonAdapter lutemonAdapter;
 
     @Override
@@ -41,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         trainingBtn = findViewById(R.id.btnMoveToTraining);
         battleBtn = findViewById(R.id.btnMoveToBattle);
         menuBtn = findViewById(R.id.btnMoveToMenu);
-        
+        deletebtn = findViewById(R.id.button69);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         lutemonAdapter = new LutemonAdapter(LutemonStorage.allLutemons,this);
@@ -67,6 +68,21 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(this, "Select exactly two Lutemons for battle!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        deletebtn.setOnClickListener(view -> {
+            ArrayList<Lutemon> selectedLutemons = lutemonAdapter.getSelectedLutemons();
+            if (selectedLutemons.size() > 0) {
+                for (Lutemon lutemon : selectedLutemons) {
+                    LutemonStorage.allLutemons.remove(lutemon);
+                }
+                Toast.makeText(this,"Lutemon(s) deleted!", Toast.LENGTH_SHORT).show();
+                lutemonAdapter.notifyDataSetChanged();
+                LutemonStorage.saveToFile(this);
+            } else {
+                Toast.makeText(this, "Select at least one Lutemon to delete!", Toast.LENGTH_SHORT).show();
+            }
+        } );
+
 
         menuBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);
