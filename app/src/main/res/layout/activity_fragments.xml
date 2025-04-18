@@ -13,14 +13,14 @@
         android:layout_width="430dp"
         android:layout_height="75dp"
         android:layout_marginTop="24dp"
-        android:background="#3051F6"
+        android:background="@android:drawable/dialog_holo_dark_frame"
         android:text="Statistics"
         android:textAlignment="center"
         android:textColor="#F6EEEE"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,6 +31,7 @@
         android:layout_marginTop="100dp"
         android:orientation="horizontal"
         android:padding="16dp"
+        android:paddingHorizontal="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginHorizontal="8dp"
             android:text="Statistics" />
 
         <Button
@@ -48,6 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginHorizontal="8dp"
             android:text="Pie Chart" />
 
         <Button
@@ -55,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginHorizontal="8dp"
             android:text="Bar Graph" />
     </LinearLayout>
 
