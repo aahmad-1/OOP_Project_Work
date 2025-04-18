@@ -51,6 +51,7 @@ public abstract class Lutemon implements Serializable {
 
     }
 
+
     //commit
     public int getImageResourceRight() {
         return imageResourceRight;
@@ -59,6 +60,14 @@ public abstract class Lutemon implements Serializable {
     public int getImageResourceLeft() {
         return imageResourceLeft;
     }
+
+    public void setImageResourceRight(int imageResourceRight) {
+        this.imageResourceRight = imageResourceRight;
+    }
+    public void setImageResourceLeft(int imageResourceLeft) {
+        this.imageResourceLeft = imageResourceLeft;
+    }
+
     public void setWins(int wins) {
         this.wins = wins;
     }
@@ -66,6 +75,9 @@ public abstract class Lutemon implements Serializable {
     public void setLosses(int losses) {
         this.losses = losses;
     }
+
+    public void setName(String name){ this.name = name;}
+
 
     public void setTotalBattles(int totalBattles) {
         this.totalBattles = totalBattles;
@@ -147,5 +159,8 @@ public abstract class Lutemon implements Serializable {
     }
 
 
+    public void setAttack(int atk) {this.attack = attack;
+    }
+    public void setDefense(int def) {this.defense = def;}
 
 }

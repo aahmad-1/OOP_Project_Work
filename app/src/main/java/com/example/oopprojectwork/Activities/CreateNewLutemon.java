@@ -71,6 +71,7 @@ public class CreateNewLutemon extends AppCompatActivity {
             }
 
             LutemonStorage.allLutemons.add(newLutemon);
+            LutemonStorage.saveToFile(this);
             Toast.makeText(this, "Lutemon created!", Toast.LENGTH_SHORT).show();
 
             // Navigate to Home screen instead of just finishing

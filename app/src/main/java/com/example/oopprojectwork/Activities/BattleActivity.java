@@ -133,6 +133,7 @@ public class BattleActivity extends AppCompatActivity {
                 attacker.setTotalBattles(attacker.getTotalBattles() + 1);
                 defender.setTotalBattles(defender.getTotalBattles() + 1);
                 Lutemon.battleCounter++;
+                LutemonStorage.saveToFile(this);
 
                 // RESET HEALTHS
                 lutemon1.setHealth(lutemon1.getMaxHealth());

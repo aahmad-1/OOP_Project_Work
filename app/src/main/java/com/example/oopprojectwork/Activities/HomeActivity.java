@@ -35,6 +35,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lutemon_home);
 
+        // In HomeActivity or MainActivity onCreate()
+
         recyclerView = findViewById(R.id.recyclerView);
         trainingBtn = findViewById(R.id.btnMoveToTraining);
         battleBtn = findViewById(R.id.btnMoveToBattle);
