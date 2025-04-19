@@ -50,18 +50,9 @@ public class LutemonStorage {
             writer.newLine();
 
             for (Lutemon l : allLutemons) {
-                String line = String.format("%s,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d",
-                        l.color(),
-                        l.getName(),
-                        l.getAttack(),
-                        l.getDefense(),
-                        l.getHealth(),
-                        l.getExperience(),
-                        l.getImageResourceRight(),
-                        l.getImageResourceLeft(),
-                        l.getTotalBattles(),
-                        l.getWins(),
-                        l.getTotalTrainings());
+                String line = l.color() +","+ l.getName() +","+ l.getAttack() +","+ l.getDefense()
+                        +"," +l.getHealth() +","+ l.getExperience() +"," +l.getImageResourceRight()
+                        +","+ l.getImageResourceLeft() +","+ l.getTotalBattles() +","+ l.getWins() +","+l.getTotalTrainings();
                 writer.write(line);
                 writer.newLine();
             }
