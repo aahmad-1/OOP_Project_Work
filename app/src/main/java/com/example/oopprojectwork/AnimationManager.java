@@ -71,11 +71,16 @@ public class AnimationManager {
         flashOverlay.setVisibility(View.VISIBLE);
         completionText.setVisibility(View.GONE);
 
+        // Find ability text views that might need to be hidden later
+        View rootView = progressBar.getRootView();
+        final TextView dodgeAbilityText = rootView.findViewById(R.id.DodgeAbility);
+        final TextView specialAttackAbilityText = rootView.findViewById(R.id.SpecialAttackAbility);
+
         // Flash animation during loading
         AlphaAnimation flash = new AlphaAnimation(0.3f, 0.8f);
         flash.setDuration(4000);
         flash.setRepeatMode(AlphaAnimation.REVERSE);
-        flash.setRepeatCount(AlphaAnimation.INFINITE);
+        flash.setRepeatCount(Animation.INFINITE);
         flashOverlay.startAnimation(flash);
 
         // Animate progress bar
@@ -108,8 +113,18 @@ public class AnimationManager {
                     onComplete.run();
                 }
 
-                // Optional: Hide the text after 3 seconds
-                new Handler().postDelayed(() -> completionText.setVisibility(View.GONE), 3000);
+                // Hide the text and any ability texts after 3 seconds
+                new Handler().postDelayed(() -> {
+                    completionText.setVisibility(View.GONE);
+
+                    // Also hide any ability texts that might have been shown
+                    if (dodgeAbilityText != null) {
+                        dodgeAbilityText.setVisibility(View.GONE);
+                    }
+                    if (specialAttackAbilityText != null) {
+                        specialAttackAbilityText.setVisibility(View.GONE);
+                    }
+                }, 3000);
             }
         });
         animator.start();
