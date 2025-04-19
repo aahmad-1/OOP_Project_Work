@@ -1,5 +1,8 @@
 package com.example.oopprojectwork;
 
+import static com.example.oopprojectwork.Lutemon.Lutemon.battleCounter;
+import static com.example.oopprojectwork.Lutemon.Lutemon.trainingCounter;
+
 import android.content.Context;
 import android.util.Log;
 
@@ -38,8 +41,13 @@ public class LutemonStorage {
     }
 
     public static void saveToFile(Context context) {
-        try (FileOutputStream fos = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
-             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(fos))) {
+        try {
+            FileOutputStream fos = context.openFileOutput("lutemons.txt", Context.MODE_PRIVATE);
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(fos));
+            writer.write("BATTLE_COUNTER=" + battleCounter);
+            writer.newLine();
+            writer.write("TRAINING_COUNTER=" + trainingCounter);
+            writer.newLine();
 
             for (Lutemon l : allLutemons) {
                 String line = String.format("%s,%s,%d,%d,%d,%d,%d,%d,%d,%d,%d",
@@ -57,19 +65,35 @@ public class LutemonStorage {
                 writer.write(line);
                 writer.newLine();
             }
+
+
+
+            writer.close();
         } catch (IOException e) {
             Log.e(TAG, "Error saving Lutemons to file", e);
         }
     }
 
     public static void loadFromFile(Context context) {
-        allLutemons.clear(); // Clear existing data
+        allLutemons.clear(); // clear old data
+        battleCounter = 0;
+        trainingCounter = 0;
 
-        try (FileInputStream fis = context.openFileInput(FILENAME);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(fis))) {
+        try {
+            FileInputStream fis = context.openFileInput("lutemons.txt");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
 
             String line;
             while ((line = reader.readLine()) != null) {
+
+                if (line.startsWith("BATTLE_COUNTER=")) {
+                    battleCounter = Integer.parseInt(line.split("=")[1]);
+                    continue;
+                } else if (line.startsWith("TRAINING_COUNTER=")) {
+                    trainingCounter = Integer.parseInt(line.split("=")[1]);
+                    continue;
+                }
+
                 String[] parts = line.split(",");
 
                 // Skip invalid lines
