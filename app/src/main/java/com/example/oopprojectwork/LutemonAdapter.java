@@ -47,16 +47,11 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonAdapter.LutemonV
         holder.checkBox.setChecked(selectedLutemons.contains(lutemon));
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                if(selectedLutemons.size() < 2){
-                    selectedLutemons.add(lutemon);
-                }else{
-                    holder.checkBox.setChecked(false);
-                    Toast.makeText(context, "You can only select 2 lutemons for battle or 1 for training", Toast.LENGTH_SHORT).show();
-                }
-
-            } else {
+                selectedLutemons.add(lutemon);
+                } else {
                 selectedLutemons.remove(lutemon);
             }
+
         });
 
 

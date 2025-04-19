@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(this,TrainingActivity.class);
                 startActivity(intent);
             } else {
-                Toast.makeText(this, "Select at least one Lutemon!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Select exactly 1 to Train!", Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -76,6 +76,9 @@ public class HomeActivity extends AppCompatActivity {
                     LutemonStorage.allLutemons.remove(lutemon);
                 }
                 Toast.makeText(this,"Lutemon(s) deleted!", Toast.LENGTH_SHORT).show();
+
+                // Clear the selected list in the adapter
+                lutemonAdapter.getSelectedLutemons().clear();
                 lutemonAdapter.notifyDataSetChanged();
                 LutemonStorage.saveToFile(this);
             } else {
