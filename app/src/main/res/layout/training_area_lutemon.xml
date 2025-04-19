@@ -144,6 +144,38 @@
         app:layout_constraintStart_toStartOf="@+id/imageView"
         tools:text="Training Completed! +2 EXP" />
 
+    <TextView
+        android:id="@+id/DodgeAbility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="New Ability Unlocked (DODGE)"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        tools:text="New Ability Unlocked (DODGE)" />
+
+    <TextView
+        android:id="@+id/SpecialAttackAbility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="New Ability Unlocked (SPECIAL ATTACK)"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        tools:text="New Ability Unlocked (SPECIAL ATTACK)" />
+
     <Button
         android:id="@+id/btnTrain"
         android:layout_width="0dp"
