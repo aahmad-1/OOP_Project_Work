@@ -95,13 +95,13 @@ public class BattleActivity extends AppCompatActivity {
 
 
             boolean defenderDodged = false;
-            if (defender.getExperience() > 5 && random.nextInt(5) == 1) {
+            if (defender.getExperience() >= 4 && random.nextInt(5) == 1) {
                 defenderDodged = true;
                 appendBattleLog(defender.getName() + " DODGED the attack from " + attacker.getName() + "!");
             }
 
             if (!defenderDodged) {
-                if (attacker.getExperience() > 5 && random.nextInt(5) == 1) {
+                if (attacker.getExperience() >= 6 && random.nextInt(5) == 1) {
                     performSpecialAttack(attacker, defender);
                 } else {
                     performNormalAttack(attacker, defender);
