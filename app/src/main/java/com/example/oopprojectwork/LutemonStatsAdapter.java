@@ -35,7 +35,7 @@ public class LutemonStatsAdapter extends RecyclerView.Adapter<LutemonStatsAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Lutemon lutemon = lutemonList.get(position);
         holder.lutemonName.setText(lutemon.getName());
-        holder.lutemonStats.setText("Battles : " + lutemon.getTotalBattles() + ",\n Wins : " + lutemon.getWins() + ",\n Trainings : " + lutemon.getTotalTrainings());
+        holder.lutemonStats.setText("Battles : " + lutemon.getTotalBattles() + ",\n Wins : " + lutemon.getWins() + ",\n Trainings : " + lutemon.getTotalTrainings() + ",\n Losses : " + lutemon.getLosses());
         holder.lutemonImage.setImageResource(lutemon.getImageResourceRight());
     }
 
