@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header with black curved box -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +31,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- Lutemon Name Input -->
+        <!-- Input name for Lutemon -->
         <EditText
             android:id="@+id/editLutemonName"
             android:layout_width="match_parent"
@@ -45,7 +44,7 @@
             android:padding="12dp"
             android:textSize="16sp" />
 
-        <!-- Select Color Title -->
+        <!-- Select Lutemon Buttons -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -105,7 +104,7 @@
                 android:textColor="@android:color/black" />
         </RadioGroup>
 
-        <!-- Selected Lutemon Preview -->
+        <!-- Selected Lutemon image Preview -->
         <LinearLayout
             android:id="@+id/lutemonPreviewContainer"
             android:layout_width="match_parent"
@@ -122,7 +121,7 @@
                 android:scaleType="fitCenter" />
         </LinearLayout>
 
-        <!-- Create Button -->
+        <!-- Create Lutemon Button -->
         <Button
             android:id="@+id/btnCreate"
             android:layout_width="match_parent"
@@ -149,7 +148,6 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
-        <!-- Small gray text at bottom -->
         <TextView
             android:id="@+id/create_lutemon_screen_text"
             android:layout_width="wrap_content"

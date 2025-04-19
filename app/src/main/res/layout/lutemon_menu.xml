@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header with black curved box -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -113,7 +112,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Image Row -->
+        <!-- Row with 2 Lutemons Images -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,7 +138,6 @@
                 android:src="@drawable/pikachu_menu_screen" />
         </LinearLayout>
 
-        <!-- Spacer to push content down -->
         <View
             android:layout_width="match_parent"
             android:layout_height="50dp" />

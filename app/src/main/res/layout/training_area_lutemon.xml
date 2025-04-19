@@ -83,10 +83,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Overlapping Image -->
 
     <!-- Progress Bar -->
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
@@ -98,7 +96,6 @@
         app:layout_constraintTop_toBottomOf="@id/cardView"
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
-    <!-- Flash Overlay -->
 
     <!-- Training Complete Text -->
 
