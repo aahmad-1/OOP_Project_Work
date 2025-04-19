@@ -18,8 +18,6 @@ public abstract class Lutemon implements Serializable {
     private int losses;
     private int totalBattles;
 
-
-
     private int totalTrainings;
 
     public static int battleCounter = 0;
@@ -37,6 +35,7 @@ public abstract class Lutemon implements Serializable {
         this.wins = 0;
         this.losses = 0;
         this.totalBattles = 0;
+        this.totalTrainings = 0;
         this.imageResourceRight = imageResourceRight;
         this.imageResourceLeft = imageResourceLeft;
         this.maxHealth = health;

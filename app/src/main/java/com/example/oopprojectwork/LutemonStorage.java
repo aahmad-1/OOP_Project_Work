@@ -40,7 +40,7 @@ public class LutemonStorage {
                 String line = l.color() + "," + l.getName() + "," + l.getAttack()
                         + "," + l.getDefense() + "," + l.getHealth()+ "," +l.getExperience()
                         + "," + l.getImageResourceRight()+","+l.getImageResourceLeft()+","+l.getTotalBattles()
-                        + "," + l.getWins();
+                        + "," + l.getWins() + "," + l.getTotalTrainings();
                 writer.write(line);
                 writer.newLine();
             }
@@ -72,6 +72,7 @@ public class LutemonStorage {
                 int imageLeft = Integer.parseInt(parts[7]);
                 int totalBattles = Integer.parseInt(parts[8]);
                 int wins = Integer.parseInt(parts[9]);
+                int totalTrainings = Integer.parseInt(parts[10]);
 
                 Lutemon lutemon = null;
 
@@ -103,6 +104,7 @@ public class LutemonStorage {
                     lutemon.setImageResourceLeft(imageLeft);
                     lutemon.setTotalBattles(totalBattles);
                     lutemon.setWins(wins);
+                    lutemon.setTotalTrainings(totalTrainings);
                     allLutemons.add(lutemon);
                 }
             }
