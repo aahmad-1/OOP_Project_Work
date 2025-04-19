@@ -109,17 +109,17 @@ public class BattleActivity extends AppCompatActivity {
             }
 
 
-            // 🩹 Update health bar
+            //  Update health bar
             healthBar1.setProgress(lutemon1.getHealth());
             healthBar2.setProgress(lutemon2.getHealth());
 
-            // 📝 Update UI
+            //  Update UI
             attackerInfo.setText(lutemon1.toString());
             defenderInfo.setText(lutemon2.toString());
 
 
 
-            // 💀 Check if defender is defeated
+            // Check if defender is defeated
             if (defender.getHealth() <= 0) {
                 appendBattleLog(defender.getName() + " has been defeated!");
 
@@ -145,7 +145,7 @@ public class BattleActivity extends AppCompatActivity {
                 btnNextAttack.setEnabled(false);
                 btnNextAttack.setText("Battle Over");
             } else {
-                // 🔁 Switch turn
+                // Switch turn
                 isLutemon1Turn = !isLutemon1Turn;
             }
 

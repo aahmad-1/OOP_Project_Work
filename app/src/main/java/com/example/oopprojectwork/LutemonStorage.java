@@ -31,7 +31,6 @@ public class LutemonStorage {
     public static ArrayList<Lutemon> selectedForTraining = new ArrayList<>();
     public static ArrayList<Lutemon> selectedForBattle = new ArrayList<>();
     public static ArrayList<Lutemon> allLutemons = new ArrayList<>();
-    public static ArrayList<Lutemon> selectedToDelete = new ArrayList<>();
 
     // Initialize with default Lutemons
     static {
