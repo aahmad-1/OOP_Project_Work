@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class LutemonStorage {
     private static final String TAG = "LutemonStorage";
     private static final String FILENAME = "lutemons.txt";
-    private static final int EXPECTED_FIELD_COUNT = 11;
+    private static final int EXPECTED_FIELD_COUNT = 12;
 
     public static ArrayList<Lutemon> selectedForTraining = new ArrayList<>();
     public static ArrayList<Lutemon> selectedForBattle = new ArrayList<>();
@@ -51,7 +51,9 @@ public class LutemonStorage {
             for (Lutemon l : allLutemons) {
                 String line = l.color() +","+ l.getName() +","+ l.getAttack() +","+ l.getDefense()
                         +"," +l.getHealth() +","+ l.getExperience() +"," +l.getImageResourceRight()
-                        +","+ l.getImageResourceLeft() +","+ l.getTotalBattles() +","+ l.getWins() +","+l.getTotalTrainings();
+                        +","+ l.getImageResourceLeft() +","+ l.getTotalBattles() +","+ l.getWins() +","+l.getTotalTrainings()
+                        +","+ l.getLosses();;
+
                 writer.write(line);
                 writer.newLine();
             }
@@ -129,6 +131,7 @@ public class LutemonStorage {
             int totalBattles = Integer.parseInt(parts[8]);
             int wins = Integer.parseInt(parts[9]);
             int totalTrainings = Integer.parseInt(parts[10]);
+            int losses = Integer.parseInt(parts[11]);
 
             Lutemon lutemon = null;
             switch (color) {
@@ -159,6 +162,7 @@ public class LutemonStorage {
                 lutemon.setTotalBattles(totalBattles);
                 lutemon.setWins(wins);
                 lutemon.setTotalTrainings(totalTrainings);
+                lutemon.setLosses(losses);
             }
 
             return lutemon;
