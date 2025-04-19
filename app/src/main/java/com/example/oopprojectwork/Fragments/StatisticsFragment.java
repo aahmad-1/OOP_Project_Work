@@ -53,6 +53,7 @@ public class StatisticsFragment extends Fragment {
         int totalLutemons = lutemonList.size();
         int totalbattles = 0;
         int totalTrainings = 0;
+
         for (Lutemon lutemon : lutemonList) {
             totalbattles += lutemon.getTotalBattles();
             totalTrainings += lutemon.getTotalTrainings();

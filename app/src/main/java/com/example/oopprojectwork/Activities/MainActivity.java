@@ -20,7 +20,7 @@ import com.example.oopprojectwork.R;
 public class MainActivity extends AppCompatActivity {
 
     TextView counter;
-
+// comments
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

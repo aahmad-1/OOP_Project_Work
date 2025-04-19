@@ -26,7 +26,7 @@ public class AnimationManager {
         leftSword.setVisibility(View.VISIBLE);
         rightSword.setVisibility(View.VISIBLE);
 
-        // Prepare MediaPlayer for the clash sound haha
+        // Prepare MediaPlayer for the clash sound
         final MediaPlayer clashSound = MediaPlayer.create(context, R.raw.sword_clash);
 
         // Set listener to repeat the sound once

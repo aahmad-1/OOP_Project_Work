@@ -47,9 +47,11 @@ public class BarGraphFragment extends Fragment {
         Cartesian bar = AnyChart.bar();
 
         // Initialize total wins for each color
-        List<Lutemon> lutemons = LutemonStorage.allLutemons; // Replace with your actual data source
+        List<Lutemon> lutemons = LutemonStorage.allLutemons;
         int redWins = 0, blackWins = 0, greenWins = 0, orangeWins = 0, pinkWins = 0;
 
+
+        // Calculate total wins for each color
         for (Lutemon lutemon : lutemons) {
             switch (lutemon.color()) {
                 case "Red":
