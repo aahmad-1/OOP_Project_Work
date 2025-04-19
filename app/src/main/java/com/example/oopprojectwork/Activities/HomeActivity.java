@@ -74,6 +74,7 @@ public class HomeActivity extends AppCompatActivity {
             if (selectedLutemons.size() > 0) {
                 for (Lutemon lutemon : selectedLutemons) {
                     LutemonStorage.allLutemons.remove(lutemon);
+
                 }
                 Toast.makeText(this,"Lutemon(s) deleted!", Toast.LENGTH_SHORT).show();
 

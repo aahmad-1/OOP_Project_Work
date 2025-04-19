@@ -60,7 +60,7 @@ public class TrainingActivity extends Activity {
                 int previousExp = trainingLutemon.getExperience();
                 trainingLutemon.setExperience(previousExp + 2);
                 trainingLutemon.setTotalTrainings(trainingLutemon.getTotalTrainings() + 1);
-                Lutemon.trainingCounter++;
+
 
                 // Check if new abilities should be unlocked
                 checkAndShowNewAbilities(previousExp);

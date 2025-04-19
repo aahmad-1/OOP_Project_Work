@@ -1,7 +1,5 @@
 package com.example.oopprojectwork;
 
-import static com.example.oopprojectwork.Lutemon.Lutemon.battleCounter;
-import static com.example.oopprojectwork.Lutemon.Lutemon.trainingCounter;
 
 import android.content.Context;
 import android.util.Log;
@@ -43,10 +41,7 @@ public class LutemonStorage {
         try {
             FileOutputStream fos = context.openFileOutput("lutemons.txt", Context.MODE_PRIVATE);
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(fos));
-            writer.write("BATTLE_COUNTER=" + battleCounter);
-            writer.newLine();
-            writer.write("TRAINING_COUNTER=" + trainingCounter);
-            writer.newLine();
+
 
             for (Lutemon l : allLutemons) {
                 String line = l.color() +","+ l.getName() +","+ l.getAttack() +","+ l.getDefense()
@@ -68,8 +63,7 @@ public class LutemonStorage {
 
     public static void loadFromFile(Context context) {
         allLutemons.clear(); // clear old data
-        battleCounter = 0;
-        trainingCounter = 0;
+
 
         try {
             FileInputStream fis = context.openFileInput("lutemons.txt");
@@ -78,13 +72,6 @@ public class LutemonStorage {
             String line;
             while ((line = reader.readLine()) != null) {
 
-                if (line.startsWith("BATTLE_COUNTER=")) {
-                    battleCounter = Integer.parseInt(line.split("=")[1]);
-                    continue;
-                } else if (line.startsWith("TRAINING_COUNTER=")) {
-                    trainingCounter = Integer.parseInt(line.split("=")[1]);
-                    continue;
-                }
 
                 String[] parts = line.split(",");
 

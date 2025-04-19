@@ -20,8 +20,6 @@ import com.example.oopprojectwork.R;
 public class MainActivity extends AppCompatActivity {
 
     TextView counter;
-    ProgressBar trainingProgress;
-    View flashOverlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

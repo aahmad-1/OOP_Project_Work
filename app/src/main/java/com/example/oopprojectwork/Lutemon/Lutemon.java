@@ -20,8 +20,6 @@ public abstract class Lutemon implements Serializable {
 
     private int totalTrainings;
 
-    public static int battleCounter = 0;
-    public static int trainingCounter = 0;
 
 
 
