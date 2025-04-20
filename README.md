@@ -67,3 +67,4 @@ Turn-based Android game where users create, train, and battle colorful creatures
 - [x] Stat tracking (XP, battles won, battles lost, battles completed, etc)
 - [x] Battle visualization with animations
 - [x] Modular UI with Fragments
+- [x] Made use of AnyChart for statistical visualizations
