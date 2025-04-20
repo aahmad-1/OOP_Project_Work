@@ -1,4 +1,4 @@
-# Lutemon Battle Game 🏟️
+# Lutemon Battle Game 
 
 
 Turn-based Android game where users create, train, and battle colorful creatures called Lutemons. Built with Java in Android Studio following OOP principles.
@@ -15,22 +15,22 @@ Turn-based Android game where users create, train, and battle colorful creatures
 [2]: https://github.com/Manan-codes
 [3]: https://github.com/blaise-creator
 
-## Features ✨
+## Features 
 
 ### Core Gameplay
-- 🧠 **Turn-based Combat**: Lutemons battle using attack/defense stats
-- 🏋️ **Training System**: Gain experience to unlock special abilities
-- ⚔️ **Battle Simulation**: Real-time battle logs with dynamic UI updates
+-  **Turn-based Combat**: Lutemons battle using attack/defense stats
+-  **Training System**: Gain experience to unlock special abilities
+-  **Battle Simulation**: Real-time battle logs with dynamic UI updates
 
 ### Lutemon Management
-- 🏡 **Home Area**: Regenerates health
-- 🎯 **Training Area**: Increases experience
-- 🏟️ **Battle Arena**: Fight other Lutemons
+-  **Home Area**: Regenerates health
+-  **Training Area**: Increases experience
+-  **Battle Arena**: Fight other Lutemons
 
 ### Technical Highlights
-- 🖼️ **Custom RecyclerViews**: Dynamic lists with stats and images
-- 🎨 **Unique Lutemon Visuals**: Color-coded drawables for each type
-- 📊 **Stats Tracking**: Name, color, attack, defense, health, XP, movement history
+-  **Custom RecyclerViews**: Dynamic lists with stats and images
+-  **Unique Lutemon Visuals**: Color-coded drawables for each type
+-  **Stats Tracking**: Name, color, attack, defense, health, XP, movement history
 
 ## Lutemon Types 🎨
 
@@ -52,7 +52,6 @@ Turn-based Android game where users create, train, and battle colorful creatures
 
 ### Data Structures
 - `ArrayList<Lutemon>` for collections
-- `HashMap<Integer, Lutemon>` for ID-based access
 
 ### Android Components & Compatability
 - Tested across various Android phones
