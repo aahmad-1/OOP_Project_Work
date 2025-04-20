@@ -19,7 +19,7 @@ Turn-based Android game where users create, train, and battle colorful creatures
 
 ### Core Gameplay
 - 🧠 **Turn-based Combat**: Lutemons battle using attack/defense stats
-- 🏋️ **Training System**: Gain experience to boost attack power
+- 🏋️ **Training System**: Gain experience to unlock special abilities
 - ⚔️ **Battle Simulation**: Real-time battle logs with dynamic UI updates
 
 ### Lutemon Management
@@ -42,7 +42,7 @@ Turn-based Android game where users create, train, and battle colorful creatures
 | Orange | 8      | 1       | 17     |
 | Black  | 9      | 0       | 16     |
 
-*All Lutemons start at full health with 0 XP (each XP adds +1 attack)*
+*All Lutemons start at full health with 0 XP
 
 ## Technical Implementation ⚙️
 
