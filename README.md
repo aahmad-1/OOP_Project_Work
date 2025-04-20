@@ -1,18 +1,27 @@
-# Lutemon Arena 🏟️
-
-![Lutemon Banner](https://placeholder-for-your-banner-image.com/lutemon-arena.jpg) 
-*(Consider adding an actual screenshot or logo here)*
+# Lutemon Battle Game 🏟️
 
 Turn-based Android game where users create, train, and battle colorful creatures called Lutemons. Built with Java in Android Studio following OOP principles.
 
 **Train your team. Fight for glory. Keep your Lutemons alive.**
 
+## Team members
+
+<!-- Division of work among team members -->
+
+- [Ahmad Paturusi][1]: UI/UX design, Lutemon assets, and button interactions
+- [Raja Manan Tassadiq][2]: Animations, statistics tracking, and Figma prototyping
+- [Blaise Mwubahamana][3]: Battle logic, data persistence, and file I/O implementation
+
+[1]: https://github.com/aahmad-1
+[2]: https://github.com/Manan-codes
+[3]: https://github.com/blaise-creator
+
 ## Features ✨
 
 ### Core Gameplay
-- 🧠 **Turn-based Combat**: Lutemons battle using attack/defense stats (weaker Lutemon gets deleted!)
-- 🏋️ **Training System**: Gain experience to boost attack power
-- ⚔️ **Battle Simulation**: Real-time battle logs with dynamic UI updates
+- 🧠 **Turn-based Combat**: Lutemons battle using attack/defense stats 
+- 🏋️ **Training System**: Gain experience to gain special abilities
+- ⚔️ **Battle Simulation**: Real-time battle logs with dynamic UI updates & animations
 
 ### Lutemon Management
 - 🏡 **Home Area**: Regenerates health
@@ -27,13 +36,13 @@ Turn-based Android game where users create, train, and battle colorful creatures
 
 ## Lutemon Types 🎨
 
-| Color  | Attack | Defense | Max HP |
+| Color  | Attack | Defense |  HP    |
 |--------|--------|---------|--------|
-| White  | 5      | 4       | 20     |
+| Red    | 5      | 4       | 20     |
 | Green  | 6      | 3       | 19     |
 | Pink   | 7      | 2       | 18     |
 | Orange | 8      | 1       | 17     |
-| Black  | 9      | 0       | 16     |
+| Black  | 5      | 5       | 12     |
 
 *All Lutemons start at full health with 0 XP (each XP adds +1 attack)*
 
@@ -63,6 +72,4 @@ Turn-based Android game where users create, train, and battle colorful creatures
 ✅ Distinct visual identity for each Lutemon  
 ✅ Real-time battle logs in UI  
 ✅ Complete save/load functionality  
-✅ Stat tracking (XP, battles survived, location)  
-
-*(Add installation instructions and screenshots here for a complete README)*
+✅ Stat tracking (XP, battles won, battles lost, battles survived, etc)  
