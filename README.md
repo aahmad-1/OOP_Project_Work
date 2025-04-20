@@ -63,9 +63,9 @@ Turn-based Android game where users create, train, and battle colorful creatures
 
 
 ## Bonus Features 🎁
-✅ Dynamic RecyclerView implementations
-✅ Distinct visual identity for each Lutemon
-✅ Real-time battle logs in UI
+✅ Dynamic RecyclerView implementations\n
+✅ Distinct visual identity for each Lutemon\n
+✅ Real-time battle logs in UI\
 ✅ Complete save/load functionality
 ✅ Stat tracking (XP, battles won, battles lost, battles completed, etc)
 ✅ Battle visualization with animations
