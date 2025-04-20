@@ -26,7 +26,6 @@ Turn-based Android game where users create, train, and battle colorful creatures
 - 🏡 **Home Area**: Regenerates health
 - 🎯 **Training Area**: Increases experience
 - 🏟️ **Battle Arena**: Fight other Lutemons
-- 🗃️ **Persistent Storage**: Save/load progress via local files
 
 ### Technical Highlights
 - 🖼️ **Custom RecyclerViews**: Dynamic lists with stats and images
@@ -66,7 +65,6 @@ Turn-based Android game where users create, train, and battle colorful creatures
 - [x] Dynamic RecyclerView implementations
 - [x] Distinct visual identity for each Lutemon
 - [x] Real-time battle logs in UI
-- [x] Complete save/load functionality
 - [x] Stat tracking (XP, battles won, battles lost, battles completed, etc)
 - [x] Battle visualization with animations
 - [x] Modular UI with Fragments
